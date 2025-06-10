@@ -38,12 +38,19 @@ const SectionWrapper = ({ id, title, children, className = '' }: SectionWrapperP
     <section 
       id={id} 
       ref={sectionRef}
-      className={`py-20 opacity-0 transform translate-y-8 transition-all duration-700 ${className}`}
+      className={`py-16 mx-4 my-8 section-animate ${className}`}
       role="region"
       aria-label={title}
     >
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10 sticky top-20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 py-4 z-10">{title}</h2>
+      <div className="container mx-auto px-6">
+        {/* Section icon */}
+        <div className="text-center mb-8">
+          <span className="text-4xl text-primary">⚡️</span>
+        </div>
+        
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 sticky top-20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 py-4 z-10 text-primary">
+          {title}
+        </h2>
         {children}
       </div>
     </section>

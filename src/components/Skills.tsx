@@ -56,15 +56,15 @@ const SkillBar = ({ skill }: { skill: SkillItem }) => {
   }, [skill.percentage]);
 
   return (
-    <div className="mb-6" title={`${skill.description}`} aria-label={`Proficiency: ${skill.percentage}%`}>
+    <div className="mb-6 cursor-pointer group" title={skill.description}>
       <div className="flex justify-between mb-2">
-        <span className="font-medium">{skill.name}</span>
-        <span>{skill.percentage}%</span>
+        <span className="font-medium text-lg flex-1 text-left">{skill.name}</span>
+        <span className="text-primary font-medium flex-none w-12 text-right">{skill.percentage}%</span>
       </div>
-      <div className="h-2 bg-muted-foreground/20 rounded-full overflow-hidden">
+      <div className="h-2.5 bg-muted-foreground/30 rounded-full overflow-hidden relative">
         <div 
           ref={progressRef}
-          className="h-full bg-primary rounded-full transition-all duration-1000 ease-out"
+          className="h-full skill-progress-bar rounded-full transition-all duration-1000 ease-in-out"
           style={{ width: '0%' }}
         />
       </div>
@@ -74,12 +74,12 @@ const SkillBar = ({ skill }: { skill: SkillItem }) => {
 
 const Skills = () => {
   return (
-    <SectionWrapper id="skills" title="Technical Skills">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <SectionWrapper id="skills" title="Technical Skills" className="skills-frame">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {skillCategories.map((category) => (
-          <div key={category.title} className="bg-card rounded-lg p-6 shadow-md">
-            <h3 className="text-xl font-semibold mb-6">{category.title}</h3>
-            <div>
+          <div key={category.title} className="bg-card rounded-lg p-6 shadow-lg">
+            <h3 className="text-xl font-semibold mb-6 text-primary">{category.title}</h3>
+            <div className="space-y-4">
               {category.skills.map((skill) => (
                 <SkillBar key={skill.name} skill={skill} />
               ))}

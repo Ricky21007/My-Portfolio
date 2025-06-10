@@ -1,94 +1,84 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* Import Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+/* Custom CSS variables for your color scheme */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark theme colors matching your original */
+    --background: 222 28% 8%; /* #0f1419 */
+    --foreground: 215 20% 82%; /* #d1d9e0 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 217 29% 15%; /* #1e2a47 */
+    --card-foreground: 215 20% 82%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 222 28% 8%;
+    --popover-foreground: 215 20% 82%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 189 74% 57%; /* #5bc0de */
+    --primary-foreground: 222 28% 8%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 218 22% 16%; /* #1a1f26 */
+    --secondary-foreground: 215 20% 82%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 218 22% 16%;
+    --muted-foreground: 215 20% 82%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 189 74% 57%;
+    --accent-foreground: 222 28% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 65%; /* #ff5555 */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 218 22% 16%;
+    --input: 218 22% 16%;
+    --ring: 189 74% 57%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom colors for your portfolio theme */
+    --hero-accent: 0 84% 65%; /* #ff5555 */
+    --skill-accent: 174 68% 44%; /* #26a69a */
+    --project-accent: 14 92% 71%; /* #ff8a65 */
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  .light {
+    /* Light theme colors matching your original */
+    --background: 0 0% 96%; /* #f5f5f5 */
+    --foreground: 0 0% 14%; /* #242526 */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 17% 91%; /* #e8ecef */
+    --card-foreground: 0 0% 14%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 96%;
+    --popover-foreground: 0 0% 14%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 174 68% 44%; /* #26a69a */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 14%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 210 17% 91%;
+    --muted-foreground: 0 0% 14%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 174 68% 44%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 14 92% 71%; /* #ff8a65 */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 210 17% 91%;
+    --input: 210 17% 91%;
+    --ring: 174 68% 44%;
+
+    --hero-accent: 14 92% 71%;
+    --skill-accent: 194 100% 75%; /* #66d9ef */
+    --project-accent: 14 92% 71%;
   }
 }
 
@@ -98,6 +88,187 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-roboto;
+    font-family: 'Roboto', Arial, sans-serif;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  h1, h2, h3 {
+    @apply font-bold;
+  }
+}
+
+/* Custom animations and effects */
+@layer utilities {
+  /* Gradient animation for hero section */
+  .hero-gradient {
+    background: linear-gradient(45deg, 
+      hsl(var(--primary) / 0.2), 
+      hsl(var(--hero-accent) / 0.2), 
+      hsl(var(--skill-accent) / 0.2)
+    );
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Section frame effects */
+  .section-frame {
+    @apply rounded-xl border-2 transition-transform duration-300;
+    background: linear-gradient(135deg, 
+      hsl(var(--primary) / 0.1), 
+      hsl(var(--card) / 0.3)
+    );
+    border-color: hsl(var(--primary));
+  }
+
+  .section-frame:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 8px 20px hsl(var(--primary) / 0.3);
+  }
+
+  .skills-frame {
+    background: linear-gradient(135deg, 
+      hsl(var(--skill-accent) / 0.1), 
+      hsl(var(--card) / 0.3)
+    );
+    border-color: hsl(var(--skill-accent));
+  }
+
+  .skills-frame:hover {
+    box-shadow: 0 8px 20px hsl(var(--skill-accent) / 0.3);
+  }
+
+  .projects-frame {
+    background: linear-gradient(135deg, 
+      hsl(var(--hero-accent) / 0.1), 
+      hsl(var(--card) / 0.3)
+    );
+    border-color: hsl(var(--hero-accent));
+  }
+
+  .projects-frame:hover {
+    box-shadow: 0 8px 20px hsl(var(--hero-accent) / 0.3);
+  }
+
+  .certificates-frame {
+    background: linear-gradient(135deg, 
+      hsl(var(--project-accent) / 0.1), 
+      hsl(var(--card) / 0.3)
+    );
+    border-color: hsl(var(--project-accent));
+  }
+
+  .certificates-frame:hover {
+    box-shadow: 0 8px 20px hsl(var(--project-accent) / 0.3);
+  }
+
+  /* Button hover effects */
+  .portfolio-btn {
+    @apply bg-primary text-primary-foreground font-bold px-5 py-2.5 rounded transition-all duration-200;
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+  }
+
+  .portfolio-btn:hover {
+    @apply bg-destructive text-white scale-105;
+    box-shadow: 0 0 15px hsl(var(--destructive) / 0.8);
+  }
+
+  /* Section visibility animation */
+  .section-animate {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+
+  .section-animate.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Skill progress bar gradient */
+  .skill-progress-bar {
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--hero-accent)));
+  }
+
+  /* Project thumbnail hover effect */
+  .project-thumbnail {
+    @apply transition-transform duration-300;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+
+  .project-thumbnail:hover {
+    @apply scale-105;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  /* Text shadow for hero */
+  .hero-text-shadow {
+    text-shadow: 2px 2px 15px hsl(var(--primary) / 0.8);
+  }
+
+  /* Light mode text shadow */
+  .light .hero-text-shadow {
+    text-shadow: 2px 2px 10px hsl(var(--skill-accent) / 0.5);
+  }
+
+  /* Certificate hover effect */
+  .certificate-hover {
+    @apply transition-transform duration-300;
+  }
+
+  .certificate-hover:hover {
+    @apply scale-105;
+  }
+
+  /* Form input styles */
+  .portfolio-input {
+    @apply w-full p-2.5 border border-primary rounded bg-card text-foreground;
+  }
+
+  .portfolio-input::placeholder {
+    color: hsl(var(--primary));
+  }
+
+  /* Submit button loading animation */
+  .submit-loading::after {
+    content: '';
+    @apply inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full ml-2;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Mobile menu animations */
+  .mobile-menu-line {
+    @apply block w-6 h-0.5 bg-foreground transition-transform duration-300;
+  }
+
+  .mobile-menu-open .mobile-menu-line:nth-child(1) {
+    @apply rotate-45 translate-y-1.5;
+  }
+
+  .mobile-menu-open .mobile-menu-line:nth-child(2) {
+    @apply opacity-0;
+  }
+
+  .mobile-menu-open .mobile-menu-line:nth-child(3) {
+    @apply -rotate-45 -translate-y-1.5;
+  }
+}
+
+/* Add Roboto font family to Tailwind */
+@layer base {
+  .font-roboto {
+    font-family: 'Roboto', Arial, sans-serif;
   }
 }
