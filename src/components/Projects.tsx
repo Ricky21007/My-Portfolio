@@ -18,7 +18,7 @@ type ProjectType = {
 const projects: ProjectType[] = [
   {
     id: "Resource System",
-    image: "public/Images/Digital.png",
+    image: "/Images/Digital.png",
     title: "Web-based Learning System",
     description: "A comprehensive digital resource request system built for educational institutions to streamline learning resource management. Features include user authentication, resource categorization, and administrative dashboard for efficient resource allocation.",
     context: "Built in 2024 for CAPACITI Program",
@@ -29,7 +29,7 @@ const projects: ProjectType[] = [
   },
   {
     id: "travique",
-    image: "public/Images/Travique.png",
+    image: "/Images/Travique.png",
     title: "Travique",
     description: "Smart Travelling Assistant web app",
     context: "Travel app",
@@ -39,7 +39,7 @@ const projects: ProjectType[] = [
   },
   {
     id: "rating-app",
-    image: "public/Images/rating.webp",
+    image: "/Images/rating.webp",
     title: "Rating App",
     description: "A rating app that was created to make rating services easier",
     context: "Rating app",
