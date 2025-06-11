@@ -11,47 +11,47 @@ type Certificate = {
 const certificates: Certificate[] = [
   {
     id: "ai-chatbots",
-    image: "/Images/Building-AI-Powered-Chatbots-Without-Programming-Certificate.png",
+    image: "public/Images/Building-AI-Powered-Chatbots-Without-Programming-Certificate.png",
     title: "Building AI-Powered Chatbots Without Programming"
   },
   {
     id: "active-listening",
-    image: "/Images/Active-Listening-Enhancing-Communication-Skills-Certificate.png",
+    image: "public/Images/Active-Listening-Enhancing-Communication-Skills-Certificate.png",
     title: "Active Listening: Enhancing Communication Skills"
   },
   {
     id: "interpersonal-skills",
-    image: "/Images/Developing-Interpersonal-Skills-Certificate.png",
+    image: "public/Images/Developing-Interpersonal-Skills-Certificate.png",
     title: "Developing Interpersonal Skills"
   },
   {
     id: "intro-ai",
-    image: "/Images/Introduction-to-AI-Certificate.png",
+    image: "public/Images/Introduction-to-AI-Certificate.png",
     title: "Introduction to AI"
   },
   {
     id: "prompt-engineering",
-    image: "/Images/Generative-AI-Prompt-Engineering-Basics-Certificate.png",
+    image: "public/Images/Generative-AI-Prompt-Engineering-Basics-Certificate.png",
     title: "Generative AI: Prompt Engineering Basics"
   },
   {
     id: "generative-ai",
-    image: "/Images/Generative-AI-Introduction-and-Applications-Certificate.png",
+    image: "public/Images/Generative-AI-Introduction-and-Applications-Certificate.png",
     title: "Generative AI: Introduction and Applications"
   },
   {
     id: "software-dev",
-    image: "/Images/Introduction-to-Software-Development-Certificate.png",
+    image: "public/Images/Introduction-to-Software-Development-Certificate.png",
     title: "Introduction to Software Development"
   },
   {
     id: "professional-emails",
-    image: "/Images/Write-Professional-Emails-in-English-Certificate.png",
+    image: "public/Images/Write-Professional-Emails-in-English-Certificate.png",
     title: "Write Professional Emails in English"
   },
   {
     id: "presentation-skills",
-    image: "/Images/Verbal-Communications-and-Presentation-Skills-Certificate.png",
+    image: "public/Images/Verbal-Communications-and-Presentation-Skills-Certificate.png",
     title: "Verbal Communications and Presentation Skills"
   }
 ];

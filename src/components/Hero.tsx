@@ -1,11 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col justify-center items-center bg-background relative">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 hero-gradient z-10"></div>
+      {/* Animated gradient background removed */}
       
       <div className="container mx-auto px-4 relative z-20">
         <div className="flex flex-col md:flex-row items-center justify-between gap-16 max-w-6xl mx-auto">
@@ -30,7 +28,7 @@ const Hero = () => {
             <img 
               src="/Images/Tyric.jpeg" 
               alt="Tyric Ramplin" 
-              className="w-72 h-72 object-cover rounded-2xl border-4 border-primary shadow-2xl"
+              className="max-w-full h-auto rounded-2xl border-4 border-primary shadow-2xl"
             />
           </div>
         </div>

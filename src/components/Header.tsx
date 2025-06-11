@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Moon, Sun } from 'lucide-react';
@@ -16,7 +15,7 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+    <header className="sticky top-0 z-50 bg-background border-b border-border">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="font-bold text-xl md:text-2xl">Tyric Ramplin</div>
         
@@ -30,7 +29,6 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
             <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
             <li><a href="#education" className="hover:text-primary transition-colors">Education</a></li>
             <li><a href="#projects" className="hover:text-primary transition-colors">Projects</a></li>
-            <li><a href="#certificates" className="hover:text-primary transition-colors">Certificates</a></li>
             <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
           </ul>
         </nav>
@@ -57,7 +55,6 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
                     <li><a href="#about" onClick={toggleMobileMenu} className="hover:text-primary transition-colors">About</a></li>
                     <li><a href="#education" onClick={toggleMobileMenu} className="hover:text-primary transition-colors">Education</a></li>
                     <li><a href="#projects" onClick={toggleMobileMenu} className="hover:text-primary transition-colors">Projects</a></li>
-                    <li><a href="#certificates" onClick={toggleMobileMenu} className="hover:text-primary transition-colors">Certificates</a></li>
                     <li><a href="#contact" onClick={toggleMobileMenu} className="hover:text-primary transition-colors">Contact</a></li>
                   </ul>
                 </nav>

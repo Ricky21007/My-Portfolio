@@ -7,7 +7,6 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Education from './components/Education';
 import Projects from './components/Projects';
-import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
@@ -53,7 +52,6 @@ function App() {
               <About />
               <Education />
               <Projects />
-              <Certificates />
               <Contact />
               <CTA />
             </main>

@@ -10,22 +10,22 @@
 @layer base {
   :root {
     /* Dark theme - professional colors */
-    --background: 210 15% 8%; /* #0d1117 */
+    --background: 210 15% 15%; /* #262626 softer dark gray */
     --foreground: 210 15% 85%; /* #c9d1d9 */
 
-    --card: 210 15% 12%; /* #161b22 */
+    --card: 210 15% 18%; /* #2e2e2e */
     --card-foreground: 210 15% 85%;
 
-    --popover: 210 15% 8%;
+    --popover: 210 15% 15%;
     --popover-foreground: 210 15% 85%;
 
     --primary: 210 100% 65%; /* #3b82f6 */
     --primary-foreground: 210 15% 8%;
 
-    --secondary: 210 15% 15%; /* #1c2128 */
+    --secondary: 210 15% 22%; /* #393939 */
     --secondary-foreground: 210 15% 85%;
 
-    --muted: 210 15% 15%;
+    --muted: 210 15% 22%;
     --muted-foreground: 210 15% 65%;
 
     --accent: 210 100% 65%;
@@ -34,8 +34,8 @@
     --destructive: 358 75% 59%; /* #f85149 */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 15% 20%;
-    --input: 210 15% 15%;
+    --border: 210 15% 27%;
+    --input: 210 15% 22%;
     --ring: 210 100% 65%;
 
     --radius: 0.5rem;
@@ -48,7 +48,7 @@
 
   .light {
     /* Light theme - professional colors */
-    --background: 0 0% 100%; /* #ffffff */
+    --background: 0 0% 96%; /* #f5f5f5 softer off-white */
     --foreground: 222 84% 5%; /* #0f172a */
 
     --card: 210 40% 98%; /* #f8fafc */
@@ -101,16 +101,6 @@
 
 /* Custom animations and effects */
 @layer utilities {
-  /* Gradient animation for hero section */
-  .hero-gradient {
-    background: linear-gradient(45deg, 
-      hsl(var(--primary) / 0.2), 
-      hsl(var(--hero-accent) / 0.2), 
-      hsl(var(--background) / 0.1)
-    );
-    background-size: 200% 200%;
-    animation: gradientShift 10s ease infinite;
-  }
 
   @keyframes gradientShift {
     0% { background-position: 0% 50%; }
@@ -121,10 +111,7 @@
   /* Section frame effects */
   .section-frame {
     @apply rounded-xl border-2 transition-transform duration-300;
-    background: linear-gradient(135deg, 
-      hsl(var(--primary) / 0.1), 
-      hsl(var(--card) / 0.8)
-    );
+    background: hsl(var(--card));
     border-color: hsl(var(--primary));
   }
 
@@ -146,10 +133,8 @@
   }
 
   .projects-frame {
-    background: linear-gradient(135deg, 
-      hsl(var(--project-accent) / 0.1), 
-      hsl(var(--card) / 0.8)
-    );
+    @apply rounded-xl border border-solid border-gray-400 transition-transform duration-300;
+    background: hsl(var(--card));
     border-color: hsl(var(--project-accent));
   }
 
@@ -157,17 +142,6 @@
     box-shadow: 0 8px 20px hsl(var(--project-accent) / 0.3);
   }
 
-  .certificates-frame {
-    background: linear-gradient(135deg, 
-      hsl(var(--primary) / 0.1), 
-      hsl(var(--card) / 0.8)
-    );
-    border-color: hsl(var(--primary));
-  }
-
-  .certificates-frame:hover {
-    box-shadow: 0 8px 20px hsl(var(--primary) / 0.3);
-  }
 
   /* Button hover effects */
   .portfolio-btn {

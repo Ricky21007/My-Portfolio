@@ -22,7 +22,7 @@ const CTA = () => {
               className="flex items-center gap-2"
             >
               <Linkedin className="h-5 w-5" />
-              LinkedIn
+             
             </a>
           </Button>
           <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
@@ -33,7 +33,7 @@ const CTA = () => {
               className="flex items-center gap-2"
             >
               <Github className="h-5 w-5" />
-              GitHub
+            
             </a>
           </Button>
         </div>
