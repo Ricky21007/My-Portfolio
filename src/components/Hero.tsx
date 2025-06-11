@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="absolute inset-0 hero-gradient z-10"></div>
       
       <div className="container mx-auto px-4 relative z-20">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-10 max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-16 max-w-6xl mx-auto">
           <div className="md:w-3/5 space-y-6 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold hero-text-shadow">I'm Tyric Ramplin</h1>
             <p className="text-2xl md:text-3xl text-primary font-medium">Frontend Developer</p>
@@ -16,7 +16,7 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <a 
                 href="/Tyric-CV.pdf" 
-                className="inline-flex items-center gap-2 px-6 py-3 font-bold text-primary hover:text-destructive transition-colors duration-300" 
+                className="inline-flex items-center gap-2 px-6 py-3 font-bold text-primary hover:text-hero-accent transition-colors duration-300" 
                 download
               >
                 📄 Download Resume
@@ -26,11 +26,11 @@ const Hero = () => {
               </button>
             </div>
           </div>
-          <div className="md:w-2/5 flex justify-center md:justify-end md:ml-24">
+          <div className="md:w-2/5 flex justify-center md:justify-end">
             <img 
               src="/Images/Tyric.jpeg" 
               alt="Tyric Ramplin" 
-              className="w-64 h-80 md:w-80 md:h-96 object-cover rounded-lg border-4 border-primary shadow-xl"
+              className="w-72 h-72 object-cover rounded-2xl border-4 border-primary shadow-2xl"
             />
           </div>
         </div>

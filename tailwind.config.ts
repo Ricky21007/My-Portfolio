@@ -66,9 +66,9 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom portfolio colors
+				// Custom professional portfolio colors
 				'hero-accent': 'hsl(var(--hero-accent))',
-				'skill-accent': 'hsl(var(--skill-accent))',
+				'education-accent': 'hsl(var(--education-accent))',
 				'project-accent': 'hsl(var(--project-accent))'
 			},
 			borderRadius: {

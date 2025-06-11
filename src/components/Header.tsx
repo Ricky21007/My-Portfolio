@@ -28,7 +28,7 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
         <nav className="hidden md:block">
           <ul className="flex space-x-6">
             <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
-            <li><a href="#skills" className="hover:text-primary transition-colors">Skills</a></li>
+            <li><a href="#education" className="hover:text-primary transition-colors">Education</a></li>
             <li><a href="#projects" className="hover:text-primary transition-colors">Projects</a></li>
             <li><a href="#certificates" className="hover:text-primary transition-colors">Certificates</a></li>
             <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
@@ -55,7 +55,7 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
                 <nav>
                   <ul className="text-center space-y-6 text-xl">
                     <li><a href="#about" onClick={toggleMobileMenu} className="hover:text-primary transition-colors">About</a></li>
-                    <li><a href="#skills" onClick={toggleMobileMenu} className="hover:text-primary transition-colors">Skills</a></li>
+                    <li><a href="#education" onClick={toggleMobileMenu} className="hover:text-primary transition-colors">Education</a></li>
                     <li><a href="#projects" onClick={toggleMobileMenu} className="hover:text-primary transition-colors">Projects</a></li>
                     <li><a href="#certificates" onClick={toggleMobileMenu} className="hover:text-primary transition-colors">Certificates</a></li>
                     <li><a href="#contact" onClick={toggleMobileMenu} className="hover:text-primary transition-colors">Contact</a></li>

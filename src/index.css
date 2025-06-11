@@ -6,79 +6,79 @@
 /* Import Roboto font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-/* Custom CSS variables for your color scheme */
+/* Custom CSS variables for professional color scheme */
 @layer base {
   :root {
-    /* Dark theme colors matching your original */
-    --background: 222 28% 8%; /* #0f1419 */
-    --foreground: 215 20% 82%; /* #d1d9e0 */
+    /* Dark theme - professional colors */
+    --background: 210 15% 8%; /* #0d1117 */
+    --foreground: 210 15% 85%; /* #c9d1d9 */
 
-    --card: 217 29% 15%; /* #1e2a47 */
-    --card-foreground: 215 20% 82%;
+    --card: 210 15% 12%; /* #161b22 */
+    --card-foreground: 210 15% 85%;
 
-    --popover: 222 28% 8%;
-    --popover-foreground: 215 20% 82%;
+    --popover: 210 15% 8%;
+    --popover-foreground: 210 15% 85%;
 
-    --primary: 189 74% 57%; /* #5bc0de */
-    --primary-foreground: 222 28% 8%;
+    --primary: 210 100% 65%; /* #3b82f6 */
+    --primary-foreground: 210 15% 8%;
 
-    --secondary: 218 22% 16%; /* #1a1f26 */
-    --secondary-foreground: 215 20% 82%;
+    --secondary: 210 15% 15%; /* #1c2128 */
+    --secondary-foreground: 210 15% 85%;
 
-    --muted: 218 22% 16%;
-    --muted-foreground: 215 20% 82%;
+    --muted: 210 15% 15%;
+    --muted-foreground: 210 15% 65%;
 
-    --accent: 189 74% 57%;
-    --accent-foreground: 222 28% 8%;
+    --accent: 210 100% 65%;
+    --accent-foreground: 210 15% 8%;
 
-    --destructive: 0 84% 65%; /* #ff5555 */
+    --destructive: 358 75% 59%; /* #f85149 */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 218 22% 16%;
-    --input: 218 22% 16%;
-    --ring: 189 74% 57%;
+    --border: 210 15% 20%;
+    --input: 210 15% 15%;
+    --ring: 210 100% 65%;
 
     --radius: 0.5rem;
 
-    /* Custom colors for your portfolio theme */
-    --hero-accent: 0 84% 65%; /* #ff5555 */
-    --skill-accent: 174 68% 44%; /* #26a69a */
-    --project-accent: 14 92% 71%; /* #ff8a65 */
+    /* Custom professional colors */
+    --hero-accent: 142 71% 45%; /* #10b981 */
+    --education-accent: 142 71% 45%; /* #10b981 */
+    --project-accent: 210 100% 65%; /* #3b82f6 */
   }
 
   .light {
-    /* Light theme colors matching your original */
-    --background: 0 0% 96%; /* #f5f5f5 */
-    --foreground: 0 0% 14%; /* #242526 */
+    /* Light theme - professional colors */
+    --background: 0 0% 100%; /* #ffffff */
+    --foreground: 222 84% 5%; /* #0f172a */
 
-    --card: 210 17% 91%; /* #e8ecef */
-    --card-foreground: 0 0% 14%;
+    --card: 210 40% 98%; /* #f8fafc */
+    --card-foreground: 222 84% 5%;
 
-    --popover: 0 0% 96%;
-    --popover-foreground: 0 0% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
 
-    --primary: 174 68% 44%; /* #26a69a */
+    --primary: 210 100% 50%; /* #0ea5e9 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 100%;
-    --secondary-foreground: 0 0% 14%;
+    --secondary: 210 40% 95%; /* #f1f5f9 */
+    --secondary-foreground: 222 84% 5%;
 
-    --muted: 210 17% 91%;
-    --muted-foreground: 0 0% 14%;
+    --muted: 210 40% 95%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 174 68% 44%;
+    --accent: 210 100% 50%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 14 92% 71%; /* #ff8a65 */
+    --destructive: 0 84% 60%; /* #ef4444 */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 17% 91%;
-    --input: 210 17% 91%;
-    --ring: 174 68% 44%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 100% 50%;
 
-    --hero-accent: 14 92% 71%;
-    --skill-accent: 194 100% 75%; /* #66d9ef */
-    --project-accent: 14 92% 71%;
+    --hero-accent: 142 71% 45%;
+    --education-accent: 142 71% 45%;
+    --project-accent: 210 100% 50%;
   }
 }
 
@@ -106,7 +106,7 @@
     background: linear-gradient(45deg, 
       hsl(var(--primary) / 0.2), 
       hsl(var(--hero-accent) / 0.2), 
-      hsl(var(--skill-accent) / 0.2)
+      hsl(var(--background) / 0.1)
     );
     background-size: 200% 200%;
     animation: gradientShift 10s ease infinite;
@@ -123,7 +123,7 @@
     @apply rounded-xl border-2 transition-transform duration-300;
     background: linear-gradient(135deg, 
       hsl(var(--primary) / 0.1), 
-      hsl(var(--card) / 0.3)
+      hsl(var(--card) / 0.8)
     );
     border-color: hsl(var(--primary));
   }
@@ -133,40 +133,40 @@
     box-shadow: 0 8px 20px hsl(var(--primary) / 0.3);
   }
 
-  .skills-frame {
+  .education-frame {
     background: linear-gradient(135deg, 
-      hsl(var(--skill-accent) / 0.1), 
-      hsl(var(--card) / 0.3)
+      hsl(var(--education-accent) / 0.1), 
+      hsl(var(--card) / 0.8)
     );
-    border-color: hsl(var(--skill-accent));
+    border-color: hsl(var(--education-accent));
   }
 
-  .skills-frame:hover {
-    box-shadow: 0 8px 20px hsl(var(--skill-accent) / 0.3);
+  .education-frame:hover {
+    box-shadow: 0 8px 20px hsl(var(--education-accent) / 0.3);
   }
 
   .projects-frame {
     background: linear-gradient(135deg, 
-      hsl(var(--hero-accent) / 0.1), 
-      hsl(var(--card) / 0.3)
-    );
-    border-color: hsl(var(--hero-accent));
-  }
-
-  .projects-frame:hover {
-    box-shadow: 0 8px 20px hsl(var(--hero-accent) / 0.3);
-  }
-
-  .certificates-frame {
-    background: linear-gradient(135deg, 
       hsl(var(--project-accent) / 0.1), 
-      hsl(var(--card) / 0.3)
+      hsl(var(--card) / 0.8)
     );
     border-color: hsl(var(--project-accent));
   }
 
-  .certificates-frame:hover {
+  .projects-frame:hover {
     box-shadow: 0 8px 20px hsl(var(--project-accent) / 0.3);
+  }
+
+  .certificates-frame {
+    background: linear-gradient(135deg, 
+      hsl(var(--primary) / 0.1), 
+      hsl(var(--card) / 0.8)
+    );
+    border-color: hsl(var(--primary));
+  }
+
+  .certificates-frame:hover {
+    box-shadow: 0 8px 20px hsl(var(--primary) / 0.3);
   }
 
   /* Button hover effects */
@@ -176,8 +176,8 @@
   }
 
   .portfolio-btn:hover {
-    @apply bg-destructive text-white scale-105;
-    box-shadow: 0 0 15px hsl(var(--destructive) / 0.8);
+    @apply bg-hero-accent text-white scale-105;
+    box-shadow: 0 0 15px hsl(var(--hero-accent) / 0.8);
   }
 
   /* Section visibility animation */
@@ -187,11 +187,6 @@
 
   .section-animate.visible {
     @apply opacity-100 translate-y-0;
-  }
-
-  /* Skill progress bar gradient */
-  .skill-progress-bar {
-    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--hero-accent)));
   }
 
   /* Project thumbnail hover effect */
@@ -216,7 +211,7 @@
 
   /* Light mode text shadow */
   .light .hero-text-shadow {
-    text-shadow: 2px 2px 10px hsl(var(--skill-accent) / 0.5);
+    text-shadow: 2px 2px 10px hsl(var(--primary) / 0.5);
   }
 
   /* Certificate hover effect */
