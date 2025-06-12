@@ -13,7 +13,7 @@ const Hero = () => {
             <p className="text-xl opacity-90 font-normal leading-relaxed">Turning Ideas into Functional & Aesthetic Web Apps</p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <a 
-                href="/Images/Tyric-CV (7).pdf" 
+                href="/Images/Tyric-CV-7.pdf" 
                 className="inline-flex items-center gap-2 px-6 py-3 font-bold text-primary hover:text-hero-accent transition-colors duration-300" 
                 download
               >
