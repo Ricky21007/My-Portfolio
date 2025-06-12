@@ -4,7 +4,7 @@ const About = () => {
   return (
     <SectionWrapper id="about" title="About Me" className="section-frame">
       <div className="text-lg leading-relaxed space-y-4">
-        <p>Hi! I'm Tyric Ramplin, a frontend developer passionate about building responsive, user-friendly websites with HTML, CSS, and JavaScript. I love blending creativity and technology to craft engaging digital experiences.</p>
+        <p>Hi! I'm Tyric Ramplin, a software developer passionate about building responsive, user-friendly websites with HTML, CSS, and JavaScript. I love blending creativity and technology to craft engaging digital experiences.</p>
         
         <p>My journey in web development has led to projects like a Web-based Resource Request System, and I'm always learning new skills to stay at the forefront of modern web technologies and AI integration.</p>
         

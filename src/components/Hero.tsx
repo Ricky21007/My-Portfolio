@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-16 max-w-6xl mx-auto">
           <div className="md:w-3/5 space-y-6 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold hero-text-shadow">I'm Tyric Ramplin</h1>
-            <p className="text-2xl md:text-3xl text-primary font-medium">Frontend Developer</p>
+            <p className="text-2xl md:text-3xl text-primary font-medium">Software Developer</p>
             <p className="text-xl opacity-90 font-normal leading-relaxed">Turning Ideas into Functional & Aesthetic Web Apps</p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <a 
