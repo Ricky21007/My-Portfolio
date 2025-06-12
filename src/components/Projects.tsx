@@ -100,13 +100,13 @@ const Projects = () => {
         </button>
       </div>
 
-      <div className="flex flex-row flex-nowrap gap-4 overflow-x-auto snap-x snap-mandatory">
+      <div className="flex flex-wrap gap-4 justify-center md:justify-start overflow-x-hidden">
         {filteredProjects.map((project) => (
           <div 
             key={project.id} 
-            className="bg-card rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-[1.02] duration-300 border border-blue-700 max-w-sm min-w-0 snap-center"
+            className="bg-card rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-[1.02] duration-300 border border-blue-700 w-full max-w-xs md:max-w-sm snap-center"
           >
-            <div className="overflow-hidden w-full h-40">
+            <div className="overflow-hidden w-full h-40 md:h-48">
               <img 
                 src={project.image} 
                 alt={project.title} 
