@@ -159,59 +159,141 @@
   }
 }
 
-/* Custom animations and effects */
+/* Modern cyberpunk animations and effects */
 @layer utilities {
 
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  /* Neon glow effects */
+  .neon-glow {
+    box-shadow:
+      0 0 5px hsl(var(--primary)),
+      0 0 10px hsl(var(--primary)),
+      0 0 15px hsl(var(--primary) / 0.5),
+      0 0 20px hsl(var(--primary) / 0.3);
   }
 
-  /* Section frame effects */
+  .neon-text {
+    text-shadow:
+      0 0 5px hsl(var(--primary)),
+      0 0 10px hsl(var(--primary)),
+      0 0 15px hsl(var(--primary) / 0.5);
+  }
+
+  /* Modern section frames */
   .section-frame {
-    @apply rounded-xl border-2 transition-transform duration-300;
-    background: hsl(var(--card));
-    border-color: hsl(var(--primary));
+    @apply rounded-2xl border transition-all duration-500;
+    background: linear-gradient(135deg,
+      hsl(var(--card) / 0.8),
+      hsl(var(--card) / 0.4)
+    );
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--primary) / 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+      transparent,
+      hsl(var(--primary) / 0.1),
+      transparent
+    );
+    transition: left 0.5s;
   }
 
   .section-frame:hover {
-    @apply -translate-y-1;
-    box-shadow: 0 8px 20px hsl(var(--primary) / 0.3);
+    @apply -translate-y-2 scale-[1.02];
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow:
+      0 20px 40px hsl(var(--primary) / 0.1),
+      0 0 0 1px hsl(var(--primary) / 0.2);
+  }
+
+  .section-frame:hover::before {
+    left: 100%;
   }
 
   .education-frame {
-    background: linear-gradient(135deg, 
-      hsl(var(--education-accent) / 0.1), 
+    background: linear-gradient(135deg,
+      hsl(var(--education-accent) / 0.1),
       hsl(var(--card) / 0.8)
     );
-    border-color: hsl(var(--education-accent));
+    border-color: hsl(var(--education-accent) / 0.3);
   }
 
   .education-frame:hover {
-    box-shadow: 0 8px 20px hsl(var(--education-accent) / 0.3);
+    border-color: hsl(var(--education-accent) / 0.6);
+    box-shadow:
+      0 20px 40px hsl(var(--education-accent) / 0.2),
+      0 0 0 1px hsl(var(--education-accent) / 0.3);
   }
 
   .projects-frame {
-    @apply rounded-xl border border-solid border-gray-400 transition-transform duration-300;
-    background: hsl(var(--card));
-    border-color: hsl(var(--project-accent));
+    @apply rounded-2xl border transition-all duration-500;
+    background: linear-gradient(135deg,
+      hsl(var(--project-accent) / 0.1),
+      hsl(var(--card) / 0.8)
+    );
+    backdrop-filter: blur(20px);
+    border-color: hsl(var(--project-accent) / 0.3);
   }
 
   .projects-frame:hover {
-    box-shadow: 0 8px 20px hsl(var(--project-accent) / 0.3);
+    @apply -translate-y-2 scale-[1.02];
+    border-color: hsl(var(--project-accent) / 0.6);
+    box-shadow:
+      0 20px 40px hsl(var(--project-accent) / 0.2),
+      0 0 0 1px hsl(var(--project-accent) / 0.3);
   }
 
 
-  /* Button hover effects */
+  /* Modern button effects */
   .portfolio-btn {
-    @apply bg-primary text-primary-foreground font-bold px-5 py-2.5 rounded transition-all duration-200;
-    box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+    @apply font-bold px-6 py-3 rounded-xl transition-all duration-300 relative overflow-hidden;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    border: 1px solid hsl(var(--primary) / 0.3);
+    box-shadow:
+      0 4px 15px hsl(var(--primary) / 0.2),
+      inset 0 1px 0 hsl(var(--primary) / 0.2);
+    color: white;
+    position: relative;
+  }
+
+  .portfolio-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
   }
 
   .portfolio-btn:hover {
-    @apply bg-hero-accent text-white scale-105;
-    box-shadow: 0 0 15px hsl(var(--hero-accent) / 0.8);
+    @apply scale-105;
+    box-shadow:
+      0 8px 25px hsl(var(--primary) / 0.4),
+      0 0 0 1px hsl(var(--primary) / 0.5),
+      inset 0 1px 0 hsl(var(--primary) / 0.3);
+    transform: translateY(-2px) scale(1.05);
+  }
+
+  .portfolio-btn:hover::before {
+    left: 100%;
+  }
+
+  .portfolio-btn:active {
+    transform: translateY(0) scale(1.02);
   }
 
   /* Section visibility animation */
@@ -238,14 +320,28 @@
     to { opacity: 1; }
   }
 
-  /* Text shadow for hero */
+  /* Modern hero text effects */
   .hero-text-shadow {
-    text-shadow: 2px 2px 15px hsl(var(--primary) / 0.8);
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-middle)), hsl(var(--gradient-end)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-flow 4s ease infinite;
+    text-shadow: none;
   }
 
-  /* Light mode text shadow */
+  @keyframes gradient-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Light mode hero text */
   .light .hero-text-shadow {
-    text-shadow: 2px 2px 10px hsl(var(--primary) / 0.5);
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-middle)), hsl(var(--gradient-end)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   /* Certificate hover effect */
@@ -295,9 +391,48 @@
   }
 }
 
-/* Add Roboto font family to Tailwind */
+/* Modern font utilities */
 @layer base {
-  .font-roboto {
-    font-family: 'Roboto', Arial, sans-serif;
+  .font-inter {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    background: linear-gradient(135deg,
+      hsl(var(--card) / 0.1),
+      hsl(var(--card) / 0.05)
+    );
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.2);
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float-gentle 6s ease-in-out infinite;
+  }
+
+  @keyframes float-gentle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Pulse glow effect */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px hsl(var(--primary) / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.8),
+                  0 0 30px hsl(var(--primary) / 0.4);
+    }
   }
 }
