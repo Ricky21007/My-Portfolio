@@ -55,13 +55,22 @@ const Hero = () => {
           {/* Left content - Enhanced */}
           <div className="md:w-3/5 space-y-8 text-center md:text-left">
             
+            {/* Console.log greeting - First */}
+            <div className="space-y-4">
+              <div className="inline-block">
+                <span className="text-lg md:text-xl font-mono text-primary opacity-80 animate-pulse">
+                  &gt; console.log("Hello, world!") 👋
+                </span>
+              </div>
+            </div>
+
             {/* Enhanced name display - Fixed positioning */}
             <div className="space-y-6">
               <h1 className="leading-tight">
                 <span className="block text-foreground/70 text-2xl md:text-3xl lg:text-4xl font-normal mb-3 animate-fade-in">
-                  I'm
+                  I am
                 </span>
-                <span 
+                <span
                   className={`relative inline-block transition-all duration-1000 text-5xl md:text-6xl lg:text-8xl font-bold ${
                     showName ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
@@ -72,15 +81,6 @@ const Hero = () => {
                   <div className="absolute -inset-2 bg-gradient-to-r from-neon-cyan/20 via-neon-green/20 to-neon-orange/20 rounded-xl blur-xl opacity-50 animate-pulse"></div>
                 </span>
               </h1>
-            </div>
-
-            {/* Console.log greeting - Moved down below name */}
-            <div className="space-y-4">
-              <div className="inline-block">
-                <span className="text-lg md:text-xl font-mono text-primary opacity-80 animate-pulse">
-                  &gt; console.log("Hello, world!") 👋
-                </span>
-              </div>
             </div>
 
             {/* Enhanced animated typing effect */}
