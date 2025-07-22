@@ -68,11 +68,11 @@ export default {
 				},
 				// Custom neon colors
 				'neon-cyan': 'hsl(var(--neon-cyan))',
-				'neon-purple': 'hsl(var(--neon-purple))',
-				'neon-pink': 'hsl(var(--neon-pink))',
 				'neon-green': 'hsl(var(--neon-green))',
 				'neon-orange': 'hsl(var(--neon-orange))',
 				'neon-blue': 'hsl(var(--neon-blue))',
+				'neon-yellow': 'hsl(var(--neon-yellow))',
+				'neon-teal': 'hsl(var(--neon-teal))',
 
 				// Section accents
 				'hero-accent': 'hsl(var(--hero-accent))',
