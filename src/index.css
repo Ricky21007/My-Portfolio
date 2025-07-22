@@ -27,7 +27,7 @@
     --muted: 217 32% 17%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 292 84% 61%; /* Purple neon */
+    --accent: 142 69% 58%; /* Green accent */
     --accent-foreground: 224 71% 4%;
 
     --destructive: 0 72% 51%;
@@ -41,21 +41,21 @@
 
     /* Custom neon colors */
     --neon-cyan: 177 70% 41%; /* #1dd1a1 */
-    --neon-purple: 292 84% 61%; /* #a855f7 */
-    --neon-pink: 330 81% 60%; /* #ec4899 */
     --neon-green: 142 69% 58%; /* #22c55e */
     --neon-orange: 25 95% 53%; /* #f97316 */
     --neon-blue: 213 93% 68%; /* #3b82f6 */
+    --neon-yellow: 48 96% 53%; /* #eab308 */
+    --neon-teal: 173 58% 39%; /* #14b8a6 */
 
     /* Gradient colors */
     --gradient-start: 177 70% 41%;
-    --gradient-middle: 292 84% 61%;
-    --gradient-end: 330 81% 60%;
+    --gradient-middle: 142 69% 58%;
+    --gradient-end: 25 95% 53%;
 
     /* Section specific accents */
     --hero-accent: 177 70% 41%;
-    --education-accent: 292 84% 61%;
-    --project-accent: 330 81% 60%;
+    --education-accent: 142 69% 58%;
+    --project-accent: 25 95% 53%;
     --contact-accent: 142 69% 58%;
   }
 
@@ -79,7 +79,7 @@
     --muted: 220 15% 92%;
     --muted-foreground: 215 25% 20%; /* Darker for better readability */
 
-    --accent: 270 80% 55%; /* Vibrant purple */
+    --accent: 142 75% 45%; /* Vibrant green */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 85% 55%;
@@ -91,19 +91,19 @@
 
     /* Light theme vibrant neon colors */
     --neon-cyan: 185 85% 45%; /* More vibrant cyan */
-    --neon-purple: 270 80% 55%; /* Rich purple */
-    --neon-pink: 320 85% 55%; /* Hot pink */
     --neon-green: 142 75% 45%; /* Vibrant green */
     --neon-orange: 20 95% 50%; /* Bright orange */
     --neon-blue: 210 100% 55%; /* Electric blue */
+    --neon-yellow: 48 96% 53%; /* Bright yellow */
+    --neon-teal: 173 58% 39%; /* Teal */
 
     --gradient-start: 185 85% 45%;
-    --gradient-middle: 270 80% 55%;
-    --gradient-end: 320 85% 55%;
+    --gradient-middle: 142 75% 45%;
+    --gradient-end: 20 95% 50%;
 
     --hero-accent: 185 85% 45%;
-    --education-accent: 270 80% 55%;
-    --project-accent: 320 85% 55%;
+    --education-accent: 142 75% 45%;
+    --project-accent: 20 95% 50%;
     --contact-accent: 142 75% 45%;
   }
 }
