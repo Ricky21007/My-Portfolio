@@ -60,51 +60,51 @@
   }
 
   .light {
-    /* Light theme - modern minimalist */
-    --background: 210 20% 98%;
-    --foreground: 224 71% 4%;
+    /* Light theme - vibrant and visible */
+    --background: 220 25% 97%; /* Slightly cooler white */
+    --foreground: 222 84% 8%; /* Darker text for better contrast */
 
-    --card: 0 0% 100%;
-    --card-foreground: 224 71% 4%;
+    --card: 220 20% 99%; /* Pure white with slight cool tint */
+    --card-foreground: 222 84% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 4%;
+    --popover-foreground: 222 84% 8%;
 
-    --primary: 177 70% 41%;
+    --primary: 210 100% 45%; /* Vibrant blue */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 94%;
-    --secondary-foreground: 224 71% 4%;
+    --secondary: 220 15% 90%; /* Light gray with cool tint */
+    --secondary-foreground: 222 84% 8%;
 
-    --muted: 210 40% 94%;
-    --muted-foreground: 215 25% 27%;
+    --muted: 220 15% 92%;
+    --muted-foreground: 215 25% 20%; /* Darker for better readability */
 
-    --accent: 292 84% 61%;
+    --accent: 270 80% 55%; /* Vibrant purple */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 72% 51%;
+    --destructive: 0 85% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 177 70% 41%;
+    --border: 220 13% 85%; /* More visible borders */
+    --input: 220 13% 88%;
+    --ring: 210 100% 45%;
 
-    /* Light theme neon colors */
-    --neon-cyan: 177 70% 41%;
-    --neon-purple: 292 84% 61%;
-    --neon-pink: 330 81% 60%;
-    --neon-green: 142 69% 58%;
-    --neon-orange: 25 95% 53%;
-    --neon-blue: 213 93% 68%;
+    /* Light theme vibrant neon colors */
+    --neon-cyan: 185 85% 45%; /* More vibrant cyan */
+    --neon-purple: 270 80% 55%; /* Rich purple */
+    --neon-pink: 320 85% 55%; /* Hot pink */
+    --neon-green: 142 75% 45%; /* Vibrant green */
+    --neon-orange: 20 95% 50%; /* Bright orange */
+    --neon-blue: 210 100% 55%; /* Electric blue */
 
-    --gradient-start: 177 70% 41%;
-    --gradient-middle: 292 84% 61%;
-    --gradient-end: 330 81% 60%;
+    --gradient-start: 185 85% 45%;
+    --gradient-middle: 270 80% 55%;
+    --gradient-end: 320 85% 55%;
 
-    --hero-accent: 177 70% 41%;
-    --education-accent: 292 84% 61%;
-    --project-accent: 330 81% 60%;
-    --contact-accent: 142 69% 58%;
+    --hero-accent: 185 85% 45%;
+    --education-accent: 270 80% 55%;
+    --project-accent: 320 85% 55%;
+    --contact-accent: 142 75% 45%;
   }
 }
 
