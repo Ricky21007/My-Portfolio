@@ -30,12 +30,11 @@ const Hero = () => {
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-primary rounded-full opacity-70"
+            className="absolute w-1 h-1 bg-primary rounded-full opacity-70 particle-float"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animation: `float-gentle 4s ease-in-out infinite, twinkle 2s ease-in-out infinite alternate`
+              animationDelay: `${Math.random() * 3}s`
             }}
           />
         ))}
@@ -84,7 +83,7 @@ const Hero = () => {
                 {["React", "TypeScript", "Node.js", "MongoDB", "Tailwind"].map((tech, index) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 text-sm font-mono bg-card/50 border border-primary/30 rounded-full backdrop-blur-sm hover:border-primary/60 transition-all duration-300 cursor-default"
+                    className="px-3 py-1 text-sm font-mono bg-card/50 border border-primary/30 rounded-full backdrop-blur-sm hover:border-primary/60 transition-all duration-300 cursor-default tech-fade-in"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {tech}
@@ -155,6 +154,15 @@ const Hero = () => {
       </div>
 
       <style jsx>{`
+        .particle-float {
+          animation: float-gentle 4s ease-in-out infinite, twinkle 2s ease-in-out infinite alternate;
+        }
+
+        .tech-fade-in {
+          animation: fade-in 0.5s ease-out forwards;
+          opacity: 0;
+        }
+
         @keyframes twinkle {
           0%, 100% { opacity: 0.3; transform: scale(1); }
           50% { opacity: 1; transform: scale(1.2); }
