@@ -67,8 +67,8 @@ const Hero = () => {
             {/* Enhanced name display - Fixed positioning */}
             <div className="space-y-6">
               <h1 className="leading-tight">
-                <span className="block text-foreground/70 text-2xl md:text-3xl lg:text-4xl font-normal mb-3 animate-fade-in">
-                  I am
+                <span className="block text-2xl md:text-3xl lg:text-4xl font-normal mb-3 animate-fade-in bg-gradient-to-r from-neon-cyan via-neon-green to-neon-orange bg-clip-text text-transparent">
+                  I'm
                 </span>
                 <span
                   className={`relative inline-block transition-all duration-1000 text-5xl md:text-6xl lg:text-8xl font-bold ${
