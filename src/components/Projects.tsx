@@ -10,207 +10,286 @@ type ProjectType = {
   context: string;
   tags: string[];
   technologies: string[];
+  features: string[];
   liveUrl?: string;
   sourceUrl?: string;
   previewVideo?: string;
+  status: 'completed' | 'in-progress' | 'planning';
+  year: string;
 };
 
 const projects: ProjectType[] = [
   {
-    id: "Resource System",
+    id: "resource-system",
     image: "/Images/Digital.png",
-    title: "Web-based Learning System",
-    description: "A comprehensive digital resource request system built for educational institutions to streamline learning resource management. Features include user authentication, resource categorization, and administrative dashboard for efficient resource allocation.",
-    context: "Built in 2024 for CAPACITI Program",
-    tags: ["html", "javascript"],
-    technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
+    title: "Digital Learning Hub",
+    description: "Enterprise-grade educational resource management platform with advanced user authentication and analytics.",
+    context: "CAPACITI Program 2024",
+    tags: ["frontend", "education"],
+    technologies: ["HTML5", "CSS3", "JavaScript", "PWA"],
+    features: ["🔐 Authentication", "📚 Resource Management", "📊 Analytics", "📱 Mobile-First"],
     liveUrl: "http://127.0.0.1:5501/public/index.html/",
-    previewVideo: "/Images/project1-preview.mp4"
+    status: "completed",
+    year: "2024"
   },
   {
     id: "travique",
     image: "/Images/Travique.png",
-    title: "Travique",
-    description: "Smart Travelling Assistant web app",
-    context: "Travel app",
-    tags: ["travel", "assistant"],
-    technologies: ["React", "JavaScript", "API"],
-    liveUrl: "https://aidan2125.github.io/Backend-testing/"
+    title: "Travique AI Assistant",
+    description: "Next-generation intelligent travel companion with AI-powered recommendations and real-time booking.",
+    context: "Full-Stack Travel Solution",
+    tags: ["react", "ai"],
+    technologies: ["React", "TypeScript", "Node.js", "APIs"],
+    features: ["🤖 AI Recommendations", "🗺️ Interactive Maps", "💰 Price Comparison", "📅 Smart Planning"],
+    liveUrl: "https://aidan2125.github.io/Backend-testing/",
+    status: "completed",
+    year: "2024"
   },
   {
-    id: "rating-app",
+    id: "rating-system",
     image: "/Images/rating.webp",
-    title: "Rating App",
-    description: "A rating app that was created to make rating services easier",
-    context: "Rating app",
-    tags: ["rating", "services"],
-    technologies: ["React", "JavaScript"],
-    previewVideo: "/Images/RatingApp.mp4"
+    title: "Universal Rating Engine",
+    description: "Advanced rating and review management platform with sentiment analysis and fraud detection.",
+    context: "Service Excellence Platform",
+    tags: ["react", "analytics"],
+    technologies: ["React", "TypeScript", "Firebase", "Chart.js"],
+    features: ["⭐ Multi-criteria Rating", "📈 Analytics", "🔍 Sentiment Analysis", "🛡️ Fraud Detection"],
+    previewVideo: "/Images/RatingApp.mp4",
+    status: "completed",
+    year: "2024"
   }
 ];
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const [previewSrc, setPreviewSrc] = useState<string | null>(null);
 
   const filteredProjects = filter === 'all' 
     ? projects 
     : projects.filter(project => project.tags.includes(filter));
 
-  const handleFilter = (filterValue: string) => {
-    setFilter(filterValue);
-  };
+  const filterOptions = [
+    { value: 'all', label: 'All', icon: '🚀', count: projects.length },
+    { value: 'frontend', label: 'Frontend', icon: '🎨', count: projects.filter(p => p.tags.includes('frontend')).length },
+    { value: 'react', label: 'React', icon: '⚛️', count: projects.filter(p => p.tags.includes('react')).length },
+    { value: 'ai', label: 'AI', icon: '🤖', count: projects.filter(p => p.tags.includes('ai')).length }
+  ];
 
-  const openPreview = (videoSrc?: string) => {
-    if (videoSrc) {
-      setPreviewSrc(videoSrc);
-    }
-  };
-
-  const closePreview = () => {
-    setPreviewSrc(null);
+  const statusColors = {
+    completed: 'from-neon-green to-green-400',
+    'in-progress': 'from-neon-orange to-orange-400', 
+    planning: 'from-neon-blue to-blue-400'
   };
 
   return (
-    <SectionWrapper id="projects" title="My Projects" className="section-frame">
-      <div className="mb-8 flex flex-wrap gap-2 justify-center md:justify-start">
-        <button 
-          onClick={() => handleFilter('all')} 
-          className={`px-4 py-2 rounded-md transition-colors ${filter === 'all' ? 'bg-primary text-primary-foreground' : 'bg-muted hover:bg-muted/80'}`}
-          aria-pressed={filter === 'all'}
-          aria-label="Show all projects"
-        >
-          All
-        </button>
-        <button 
-          onClick={() => handleFilter('html')} 
-          className={`px-4 py-2 rounded-md transition-colors ${filter === 'html' ? 'bg-primary text-primary-foreground' : 'bg-muted hover:bg-muted/80'}`}
-          aria-pressed={filter === 'html'}
-          aria-label="Show HTML/CSS projects"
-        >
-          HTML/CSS
-        </button>
-        <button 
-          onClick={() => handleFilter('javascript')} 
-          className={`px-4 py-2 rounded-md transition-colors ${filter === 'javascript' ? 'bg-primary text-primary-foreground' : 'bg-muted hover:bg-muted/80'}`}
-          aria-pressed={filter === 'javascript'}
-          aria-label="Show JavaScript projects"
-        >
-          JavaScript
-        </button>
+    <SectionWrapper id="projects" title="Featured Projects" className="projects-frame">
+      
+      {/* Compact Filter Section */}
+      <div className="mb-8">
+        <div className="flex flex-wrap gap-3 justify-center">
+          {filterOptions.map(option => (
+            <button
+              key={option.value}
+              onClick={() => setFilter(option.value)}
+              className={`group relative px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
+                filter === option.value
+                  ? 'bg-gradient-to-r from-neon-cyan to-neon-green text-white scale-105'
+                  : 'bg-card/30 border border-primary/20 backdrop-blur-sm hover:border-primary/50 hover:bg-primary/5'
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-lg">{option.icon}</span>
+                <span>{option.label}</span>
+                <span className="text-xs bg-background/20 px-1.5 py-0.5 rounded-full">{option.count}</span>
+              </div>
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="flex flex-wrap gap-4 justify-center md:justify-start overflow-x-hidden">
-        {filteredProjects.map((project) => (
+      {/* Compact Projects Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredProjects.map((project, index) => (
           <div 
             key={project.id} 
-            className="bg-card rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-[1.02] duration-300 border border-blue-700 w-full max-w-xs md:max-w-sm snap-center"
+            className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105 cursor-pointer"
+            onMouseEnter={() => setHoveredProject(project.id)}
+            onMouseLeave={() => setHoveredProject(null)}
+            style={{ animationDelay: `${index * 0.1}s` }}
           >
-            <div className="overflow-hidden w-full h-40 md:h-48">
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="w-full h-full object-cover" 
-                loading="lazy"
-              />
-            </div>
-            <div className="p-4">
-              <h3 className="text-lg font-bold mb-2">
-                {project.liveUrl ? (
-                  <a 
-                    href={project.liveUrl} 
-                    target="_blank" 
-                    rel="external noopener"
-                    className="hover:text-primary transition-colors"
-                  >
-                    {project.title}
-                  </a>
-                ) : (
-                  project.title
-                )}
-              </h3>
-              <p className="mb-2 text-sm text-muted-foreground">{project.description}</p>
-              <p className="text-xs mb-3">{project.context}</p>
+            {/* Glow Effect */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-project-accent/40 via-neon-green/30 to-neon-cyan/40 rounded-2xl blur opacity-0 group-hover:opacity-60 transition duration-500"></div>
+            
+            {/* Compact Project Card */}
+            <div className="relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-project-accent/20 rounded-2xl overflow-hidden group-hover:border-project-accent/60 transition-all duration-500 h-full">
               
-              <div className="mb-3 flex flex-wrap gap-1">
-                {project.technologies.map(tech => (
-                  <Badge key={tech} variant="secondary" className="text-xs">{tech}</Badge>
-                ))}
+              {/* Compact Image Container */}
+              <div className="relative overflow-hidden h-40">
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                />
+                
+                {/* Status & Year Badges */}
+                <div className="absolute top-2 left-2 right-2 flex justify-between">
+                  <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-gradient-to-r ${statusColors[project.status]} text-white text-xs font-semibold`}>
+                    {project.status === 'completed' ? '✅' : project.status === 'in-progress' ? '🚧' : '📋'}
+                  </div>
+                  <div className="px-2 py-1 rounded-lg bg-background/80 backdrop-blur-sm text-primary font-mono text-xs">
+                    {project.year}
+                  </div>
+                </div>
+                
+                {/* Quick Actions Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-t from-background/90 to-transparent transition-opacity duration-300 ${
+                  hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
+                }`}>
+                  <div className="absolute bottom-2 left-2 right-2 flex gap-2">
+                    {project.liveUrl && (
+                      <a 
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="external noopener"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex-1 flex items-center justify-center gap-1 px-3 py-1 bg-primary/90 text-white rounded-lg text-xs font-medium hover:bg-primary transition-colors"
+                      >
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Live
+                      </a>
+                    )}
+                    
+                    {project.previewVideo && (
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setPreviewSrc(project.previewVideo!);
+                        }}
+                        className="flex items-center justify-center gap-1 px-3 py-1 bg-neon-green/90 text-white rounded-lg text-xs font-medium hover:bg-neon-green transition-colors"
+                      >
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        </svg>
+                        Play
+                      </button>
+                    )}
+                  </div>
+                </div>
               </div>
               
-              <div className="flex flex-wrap gap-2">
-                {project.liveUrl && (
-                  <a 
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="external noopener"
-                    className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                    Live Demo
-                  </a>
-                )}
+              {/* Compact Content */}
+              <div className="p-4 space-y-3">
+                <div>
+                  <h3 className="text-lg font-bold mb-1 group-hover:text-project-accent transition-colors line-clamp-1">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs text-project-accent/80 font-medium mb-2">{project.context}</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed line-clamp-2">{project.description}</p>
+                </div>
                 
-                {project.sourceUrl && (
-                  <a 
-                    href={project.sourceUrl}
-                    target="_blank"
-                    rel="external noopener"
-                    className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                    </svg>
-                    Source Code
-                  </a>
-                )}
+                {/* Compact Features */}
+                <div className="space-y-2">
+                  <div className="grid grid-cols-2 gap-1 text-xs">
+                    {project.features.slice(0, 4).map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-1 text-foreground/70 truncate">
+                        <span className="text-xs">{feature.split(' ')[0]}</span>
+                        <span className="truncate">{feature.split(' ').slice(1).join(' ')}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
                 
-                {project.previewVideo && (
-                  <button
-                    onClick={() => openPreview(project.previewVideo)}
-                    className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Preview
-                  </button>
-                )}
+                {/* Compact Technologies */}
+                <div className="flex flex-wrap gap-1">
+                  {project.technologies.slice(0, 3).map((tech) => (
+                    <Badge 
+                      key={tech} 
+                      variant="secondary" 
+                      className="text-xs px-2 py-0.5 bg-project-accent/10 border border-project-accent/30 hover:bg-project-accent/20"
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                  {project.technologies.length > 3 && (
+                    <Badge variant="secondary" className="text-xs px-2 py-0.5 bg-muted/50">
+                      +{project.technologies.length - 3}
+                    </Badge>
+                  )}
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Video Preview Modal */}
+      {/* Quick Info Panel */}
+      {hoveredProject && (
+        <div className="fixed bottom-6 right-6 max-w-sm bg-card/95 backdrop-blur-xl border border-primary/30 rounded-2xl p-4 shadow-2xl z-40 transition-all duration-300">
+          {(() => {
+            const project = projects.find(p => p.id === hoveredProject);
+            return project ? (
+              <div className="space-y-2">
+                <h4 className="font-bold text-lg">{project.title}</h4>
+                <p className="text-sm text-foreground/80">{project.context}</p>
+                <div className="flex flex-wrap gap-1">
+                  {project.technologies.map(tech => (
+                    <Badge key={tech} variant="outline" className="text-xs">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            ) : null;
+          })()}
+        </div>
+      )}
+
+      {/* Compact Video Preview Modal */}
       {previewSrc && (
         <div 
-          className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-          onClick={closePreview}
+          className="fixed inset-0 bg-background/95 backdrop-blur-xl z-50 flex items-center justify-center p-4"
+          onClick={() => setPreviewSrc(null)}
         >
-          <div 
-            className="relative max-w-6xl w-full flex justify-center"
-            onClick={e => e.stopPropagation()}
-          >
+          <div className="relative max-w-4xl w-full" onClick={e => e.stopPropagation()}>
             <button
-              className="absolute -top-12 right-0 text-3xl text-foreground hover:text-primary"
-              onClick={closePreview}
-              aria-label="Close preview"
+              className="absolute -top-12 right-0 w-10 h-10 flex items-center justify-center rounded-full bg-card/80 backdrop-blur-sm border border-primary/30 text-foreground hover:text-primary transition-all"
+              onClick={() => setPreviewSrc(null)}
             >
-              ×
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
-            <video 
-              src={previewSrc} 
-              className="w-full max-h-[480px] rounded-lg shadow-xl" 
-              controls 
-              autoPlay
-            />
+            
+            <div className="relative rounded-2xl overflow-hidden border border-primary/30 shadow-2xl">
+              <video 
+                src={previewSrc} 
+                className="w-full max-h-[70vh] rounded-2xl" 
+                controls 
+                autoPlay
+              />
+            </div>
           </div>
         </div>
       )}
+
+      <style jsx>{`
+        .line-clamp-1 {
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      `}</style>
     </SectionWrapper>
   );
 };

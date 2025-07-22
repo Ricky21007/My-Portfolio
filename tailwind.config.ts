@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,7 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				roboto: ['Roboto', 'Arial', 'sans-serif'],
+				inter: ['Inter', 'system-ui', 'sans-serif'],
+				mono: ['JetBrains Mono', 'Consolas', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -66,10 +66,19 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom professional portfolio colors
+				// Custom neon colors
+				'neon-cyan': 'hsl(var(--neon-cyan))',
+				'neon-green': 'hsl(var(--neon-green))',
+				'neon-orange': 'hsl(var(--neon-orange))',
+				'neon-blue': 'hsl(var(--neon-blue))',
+				'neon-yellow': 'hsl(var(--neon-yellow))',
+				'neon-teal': 'hsl(var(--neon-teal))',
+
+				// Section accents
 				'hero-accent': 'hsl(var(--hero-accent))',
 				'education-accent': 'hsl(var(--education-accent))',
-				'project-accent': 'hsl(var(--project-accent))'
+				'project-accent': 'hsl(var(--project-accent))',
+				'contact-accent': 'hsl(var(--contact-accent))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -101,13 +110,23 @@ export default {
 				'fade-in': {
 					'0%': { opacity: '0' },
 					'100%': { opacity: '1' }
+				},
+				'float-gentle': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'pulse-glow': {
+					'0%, 100%': { boxShadow: '0 0 5px hsl(var(--primary) / 0.5)' },
+					'50%': { boxShadow: '0 0 20px hsl(var(--primary) / 0.8), 0 0 30px hsl(var(--primary) / 0.4)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'gradient-shift': 'gradient-shift 10s ease infinite',
-				'fade-in': 'fade-in 0.5s ease-out forwards'
+				'fade-in': 'fade-in 0.5s ease-out forwards',
+				'float-gentle': 'float-gentle 6s ease-in-out infinite',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
 			}
 		}
 	},

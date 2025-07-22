@@ -1,84 +1,110 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Import Roboto font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+/* Import modern fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 
-/* Custom CSS variables for professional color scheme */
+/* Modern cyberpunk color scheme */
 @layer base {
   :root {
-    /* Dark theme - professional colors */
-    --background: 210 15% 15%; /* #262626 softer dark gray */
-    --foreground: 210 15% 85%; /* #c9d1d9 */
+    /* Dark theme - cyberpunk neon */
+    --background: 224 71% 4%; /* Deep dark blue-black */
+    --foreground: 213 31% 91%; /* Bright white-blue */
 
-    --card: 210 15% 18%; /* #2e2e2e */
-    --card-foreground: 210 15% 85%;
+    --card: 224 71% 6%; /* Slightly lighter dark */
+    --card-foreground: 213 31% 91%;
 
-    --popover: 210 15% 15%;
-    --popover-foreground: 210 15% 85%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
 
-    --primary: 210 100% 65%; /* #3b82f6 */
-    --primary-foreground: 210 15% 8%;
+    --primary: 177 70% 41%; /* Cyan accent */
+    --primary-foreground: 224 71% 4%;
 
-    --secondary: 210 15% 22%; /* #393939 */
-    --secondary-foreground: 210 15% 85%;
+    --secondary: 217 32% 17%; /* Dark blue-gray */
+    --secondary-foreground: 213 31% 91%;
 
-    --muted: 210 15% 22%;
-    --muted-foreground: 210 15% 65%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 210 100% 65%;
-    --accent-foreground: 210 15% 8%;
+    --accent: 142 69% 58%; /* Green accent */
+    --accent-foreground: 224 71% 4%;
 
-    --destructive: 358 75% 59%; /* #f85149 */
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 15% 27%;
-    --input: 210 15% 22%;
-    --ring: 210 100% 65%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 177 70% 41%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Custom professional colors */
-    --hero-accent: 142 71% 45%; /* #10b981 */
-    --education-accent: 142 71% 45%; /* #10b981 */
-    --project-accent: 210 100% 65%; /* #3b82f6 */
+    /* Custom neon colors */
+    --neon-cyan: 177 70% 41%; /* #1dd1a1 */
+    --neon-green: 142 69% 58%; /* #22c55e */
+    --neon-orange: 25 95% 53%; /* #f97316 */
+    --neon-blue: 213 93% 68%; /* #3b82f6 */
+    --neon-yellow: 48 96% 53%; /* #eab308 */
+    --neon-teal: 173 58% 39%; /* #14b8a6 */
+
+    /* Gradient colors */
+    --gradient-start: 177 70% 41%;
+    --gradient-middle: 142 69% 58%;
+    --gradient-end: 25 95% 53%;
+
+    /* Section specific accents */
+    --hero-accent: 177 70% 41%;
+    --education-accent: 142 69% 58%;
+    --project-accent: 25 95% 53%;
+    --contact-accent: 142 69% 58%;
   }
 
   .light {
-    /* Light theme - professional colors */
-    --background: 0 0% 96%; /* #f5f5f5 softer off-white */
-    --foreground: 222 84% 5%; /* #0f172a */
+    /* Light theme - vibrant and visible */
+    --background: 220 25% 97%; /* Slightly cooler white */
+    --foreground: 222 84% 8%; /* Darker text for better contrast */
 
-    --card: 210 40% 98%; /* #f8fafc */
-    --card-foreground: 222 84% 5%;
+    --card: 220 20% 99%; /* Pure white with slight cool tint */
+    --card-foreground: 222 84% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 84% 5%;
+    --popover-foreground: 222 84% 8%;
 
-    --primary: 210 100% 50%; /* #0ea5e9 */
+    --primary: 210 100% 45%; /* Vibrant blue */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 95%; /* #f1f5f9 */
-    --secondary-foreground: 222 84% 5%;
+    --secondary: 220 15% 90%; /* Light gray with cool tint */
+    --secondary-foreground: 222 84% 8%;
 
-    --muted: 210 40% 95%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 220 15% 92%;
+    --muted-foreground: 215 25% 20%; /* Darker for better readability */
 
-    --accent: 210 100% 50%;
+    --accent: 142 75% 45%; /* Vibrant green */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%; /* #ef4444 */
+    --destructive: 0 85% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 210 100% 50%;
+    --border: 220 13% 85%; /* More visible borders */
+    --input: 220 13% 88%;
+    --ring: 210 100% 45%;
 
-    --hero-accent: 142 71% 45%;
-    --education-accent: 142 71% 45%;
-    --project-accent: 210 100% 50%;
+    /* Light theme vibrant neon colors */
+    --neon-cyan: 185 85% 45%; /* More vibrant cyan */
+    --neon-green: 142 75% 45%; /* Vibrant green */
+    --neon-orange: 20 95% 50%; /* Bright orange */
+    --neon-blue: 210 100% 55%; /* Electric blue */
+    --neon-yellow: 48 96% 53%; /* Bright yellow */
+    --neon-teal: 173 58% 39%; /* Teal */
+
+    --gradient-start: 185 85% 45%;
+    --gradient-middle: 142 75% 45%;
+    --gradient-end: 20 95% 50%;
+
+    --hero-accent: 185 85% 45%;
+    --education-accent: 142 75% 45%;
+    --project-accent: 20 95% 50%;
+    --contact-accent: 142 75% 45%;
   }
 }
 
@@ -88,70 +114,186 @@
   }
 
   body {
-    @apply bg-background text-foreground font-roboto;
-    font-family: 'Roboto', Arial, sans-serif;
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     scroll-behavior: smooth;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-attachment: fixed;
+  }
+
+  /* Animated background pattern */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(circle at 20% 80%, hsl(var(--neon-cyan) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--neon-purple) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, hsl(var(--neon-pink) / 0.05) 0%, transparent 50%);
+    z-index: -1;
+    animation: float 20s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-20px) rotate(1deg); }
+    66% { transform: translateY(10px) rotate(-1deg); }
   }
 
   h1, h2, h3 {
     @apply font-bold;
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-middle)), hsl(var(--gradient-end)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
 }
 
-/* Custom animations and effects */
+/* Modern cyberpunk animations and effects */
 @layer utilities {
 
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  /* Neon glow effects */
+  .neon-glow {
+    box-shadow:
+      0 0 5px hsl(var(--primary)),
+      0 0 10px hsl(var(--primary)),
+      0 0 15px hsl(var(--primary) / 0.5),
+      0 0 20px hsl(var(--primary) / 0.3);
   }
 
-  /* Section frame effects */
+  .neon-text {
+    text-shadow:
+      0 0 5px hsl(var(--primary)),
+      0 0 10px hsl(var(--primary)),
+      0 0 15px hsl(var(--primary) / 0.5);
+  }
+
+  /* Modern section frames */
   .section-frame {
-    @apply rounded-xl border-2 transition-transform duration-300;
-    background: hsl(var(--card));
-    border-color: hsl(var(--primary));
+    @apply rounded-2xl border transition-all duration-500;
+    background: linear-gradient(135deg,
+      hsl(var(--card) / 0.8),
+      hsl(var(--card) / 0.4)
+    );
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--primary) / 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+      transparent,
+      hsl(var(--primary) / 0.1),
+      transparent
+    );
+    transition: left 0.5s;
   }
 
   .section-frame:hover {
-    @apply -translate-y-1;
-    box-shadow: 0 8px 20px hsl(var(--primary) / 0.3);
+    @apply -translate-y-2 scale-[1.02];
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow:
+      0 20px 40px hsl(var(--primary) / 0.1),
+      0 0 0 1px hsl(var(--primary) / 0.2);
+  }
+
+  .section-frame:hover::before {
+    left: 100%;
   }
 
   .education-frame {
-    background: linear-gradient(135deg, 
-      hsl(var(--education-accent) / 0.1), 
+    background: linear-gradient(135deg,
+      hsl(var(--education-accent) / 0.1),
       hsl(var(--card) / 0.8)
     );
-    border-color: hsl(var(--education-accent));
+    border-color: hsl(var(--education-accent) / 0.3);
   }
 
   .education-frame:hover {
-    box-shadow: 0 8px 20px hsl(var(--education-accent) / 0.3);
+    border-color: hsl(var(--education-accent) / 0.6);
+    box-shadow:
+      0 20px 40px hsl(var(--education-accent) / 0.2),
+      0 0 0 1px hsl(var(--education-accent) / 0.3);
   }
 
   .projects-frame {
-    @apply rounded-xl border border-solid border-gray-400 transition-transform duration-300;
-    background: hsl(var(--card));
-    border-color: hsl(var(--project-accent));
+    @apply rounded-2xl border transition-all duration-500;
+    background: linear-gradient(135deg,
+      hsl(var(--project-accent) / 0.1),
+      hsl(var(--card) / 0.8)
+    );
+    backdrop-filter: blur(20px);
+    border-color: hsl(var(--project-accent) / 0.3);
   }
 
   .projects-frame:hover {
-    box-shadow: 0 8px 20px hsl(var(--project-accent) / 0.3);
+    @apply -translate-y-2 scale-[1.02];
+    border-color: hsl(var(--project-accent) / 0.6);
+    box-shadow:
+      0 20px 40px hsl(var(--project-accent) / 0.2),
+      0 0 0 1px hsl(var(--project-accent) / 0.3);
   }
 
 
-  /* Button hover effects */
+  /* Modern button effects */
   .portfolio-btn {
-    @apply bg-primary text-primary-foreground font-bold px-5 py-2.5 rounded transition-all duration-200;
-    box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+    @apply font-bold px-6 py-3 rounded-xl transition-all duration-300 relative overflow-hidden;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--neon-green)));
+    border: 1px solid hsl(var(--primary) / 0.3);
+    box-shadow:
+      0 4px 15px hsl(var(--primary) / 0.2),
+      inset 0 1px 0 hsl(var(--primary) / 0.2);
+    color: white;
+    position: relative;
+  }
+
+  .portfolio-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
   }
 
   .portfolio-btn:hover {
-    @apply bg-hero-accent text-white scale-105;
-    box-shadow: 0 0 15px hsl(var(--hero-accent) / 0.8);
+    @apply scale-105;
+    box-shadow:
+      0 8px 25px hsl(var(--primary) / 0.4),
+      0 0 0 1px hsl(var(--primary) / 0.5),
+      inset 0 1px 0 hsl(var(--primary) / 0.3);
+    transform: translateY(-2px) scale(1.05);
+  }
+
+  .portfolio-btn:hover::before {
+    left: 100%;
+  }
+
+  .portfolio-btn:active {
+    transform: translateY(0) scale(1.02);
   }
 
   /* Section visibility animation */
@@ -178,14 +320,28 @@
     to { opacity: 1; }
   }
 
-  /* Text shadow for hero */
+  /* Modern hero text effects */
   .hero-text-shadow {
-    text-shadow: 2px 2px 15px hsl(var(--primary) / 0.8);
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-middle)), hsl(var(--gradient-end)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-flow 4s ease infinite;
+    text-shadow: none;
   }
 
-  /* Light mode text shadow */
+  @keyframes gradient-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Light mode hero text */
   .light .hero-text-shadow {
-    text-shadow: 2px 2px 10px hsl(var(--primary) / 0.5);
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-middle)), hsl(var(--gradient-end)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   /* Certificate hover effect */
@@ -235,9 +391,48 @@
   }
 }
 
-/* Add Roboto font family to Tailwind */
+/* Modern font utilities */
 @layer base {
-  .font-roboto {
-    font-family: 'Roboto', Arial, sans-serif;
+  .font-inter {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    background: linear-gradient(135deg,
+      hsl(var(--card) / 0.1),
+      hsl(var(--card) / 0.05)
+    );
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.2);
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float-gentle 6s ease-in-out infinite;
+  }
+
+  @keyframes float-gentle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Pulse glow effect */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px hsl(var(--primary) / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.8),
+                  0 0 30px hsl(var(--primary) / 0.4);
+    }
   }
 }
