@@ -43,7 +43,7 @@ const Education = () => {
                     {["Programming", "Web Development", "Database Design", "Systems Analysis", "Project Management"].map((skill, index) => (
                       <span
                         key={skill}
-                        className="px-3 py-1 text-sm font-mono bg-education-accent/10 border border-education-accent/30 rounded-full hover:bg-education-accent/20 transition-colors duration-300"
+                        className="px-3 py-1 text-sm font-mono bg-education-accent/10 border border-education-accent/30 rounded-full hover:bg-education-accent/20 transition-colors duration-300 opacity-0 animate-fade-in"
                         style={{ animationDelay: `${index * 0.1}s` }}
                       >
                         {skill}
@@ -109,7 +109,7 @@ const Education = () => {
                     {["Mathematics", "Sciences", "Languages", "Computer Literacy"].map((subject, index) => (
                       <span
                         key={subject}
-                        className="px-3 py-1 text-sm font-mono bg-primary/10 border border-primary/30 rounded-full hover:bg-primary/20 transition-colors duration-300"
+                        className="px-3 py-1 text-sm font-mono bg-primary/10 border border-primary/30 rounded-full hover:bg-primary/20 transition-colors duration-300 opacity-0 animate-fade-in"
                         style={{ animationDelay: `${index * 0.1}s` }}
                       >
                         {subject}
