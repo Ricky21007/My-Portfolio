@@ -27,7 +27,7 @@ const projects: ProjectType[] = [
     context: "CAPACITI Program 2024",
     tags: ["frontend", "education"],
     technologies: ["HTML5", "CSS3", "JavaScript", "PWA"],
-    features: ["🔐 Authentication", "📚 Resource Management", "📊 Analytics", "���� Mobile-First"],
+    features: ["🔐 Authentication", "📚 Resource Management", "📊 Analytics", "📱 Mobile-First"],
     liveUrl: "http://127.0.0.1:5501/public/index.html/",
     status: "completed",
     year: "2024"
@@ -177,7 +177,7 @@ const Projects = () => {
             <div className="relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-project-accent/20 rounded-2xl overflow-hidden group-hover:border-project-accent/60 transition-all duration-500 h-full">
               
               {/* Image Container */}
-              <div className="relative overflow-hidden h-64">
+              <div className="relative overflow-hidden h-48">
                 <img
                   src={currentProject.image}
                   alt={currentProject.title}
