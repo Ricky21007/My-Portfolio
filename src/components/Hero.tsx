@@ -172,10 +172,10 @@ const Hero = () => {
               
               {/* Image container with enhanced effects */}
               <div className="relative">
-                <img 
-                  src="/Images/Tyric.jpeg" 
-                  alt="Tyric Ramplin - Software Developer" 
-                  className="relative z-10 max-w-full h-auto rounded-2xl border-2 border-primary/40 shadow-2xl transition-all duration-500 group-hover:border-primary group-hover:scale-105 float"
+                <img
+                  src="/Images/Tyric.jpeg"
+                  alt="Tyric Ramplin - Software Developer"
+                  className="relative z-10 max-w-full h-auto rounded-2xl border-2 border-primary/40 shadow-2xl"
                 />
                 
                 {/* Enhanced overlay gradient */}
