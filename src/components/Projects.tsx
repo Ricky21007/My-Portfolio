@@ -27,7 +27,7 @@ const projects: ProjectType[] = [
     context: "CAPACITI Program 2024",
     tags: ["frontend", "education"],
     technologies: ["HTML5", "CSS3", "JavaScript", "PWA"],
-    features: ["🔐 Authentication", "📚 Resource Management", "📊 Analytics", "📱 Mobile-First"],
+    features: ["🔐 Authentication", "📚 Resource Management", "📊 Analytics", "���� Mobile-First"],
     liveUrl: "http://127.0.0.1:5501/public/index.html/",
     status: "completed",
     year: "2024"
@@ -131,22 +131,22 @@ const Projects = () => {
 
       {/* Single Project Display with Navigation */}
       {filteredProjects.length > 0 && (
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-xl mx-auto">
           {/* Navigation Controls */}
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex justify-between items-center mb-4">
             <button
               onClick={prevProject}
               disabled={filteredProjects.length <= 1}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-card/50 border border-primary/20 hover:border-primary/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+              className="flex items-center gap-1 px-3 py-1.5 text-sm rounded-lg bg-card/50 border border-primary/20 hover:border-primary/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
               Previous
             </button>
 
             <div className="text-center">
-              <span className="text-sm text-muted-foreground">
+              <span className="text-xs text-muted-foreground">
                 {currentProjectIndex + 1} of {filteredProjects.length}
               </span>
             </div>
@@ -154,10 +154,10 @@ const Projects = () => {
             <button
               onClick={nextProject}
               disabled={filteredProjects.length <= 1}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-card/50 border border-primary/20 hover:border-primary/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+              className="flex items-center gap-1 px-3 py-1.5 text-sm rounded-lg bg-card/50 border border-primary/20 hover:border-primary/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
             >
               Next
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
