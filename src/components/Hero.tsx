@@ -165,27 +165,12 @@ const Hero = () => {
 
           {/* Enhanced profile image - Fixed positioning to stay out of header */}
           <div className="md:w-2/5 flex justify-center md:justify-end mt-8 md:mt-0">
-            <div className="relative group">
-              {/* Enhanced multiple glow layers */}
-              <div className="absolute -inset-6 bg-gradient-to-r from-neon-cyan via-neon-green to-neon-orange rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition duration-1000 animate-pulse"></div>
-              <div className="absolute -inset-4 bg-gradient-to-r from-neon-orange via-neon-green to-neon-cyan rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-1000 animate-pulse animation-delay-500"></div>
-              
-              {/* Image container with enhanced effects */}
-              <div className="relative">
-                <img
-                  src="/Images/Tyric.jpeg"
-                  alt="Tyric Ramplin - Software Developer"
-                  className="relative z-10 max-w-full h-auto rounded-2xl border-2 border-primary/40 shadow-2xl"
-                />
-                
-                {/* Enhanced overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-neon-green/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-
-              {/* Enhanced floating elements */}
-              <div className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-r from-neon-cyan to-neon-green rounded-full opacity-60 animate-ping"></div>
-              <div className="absolute -bottom-6 -left-6 w-8 h-8 bg-gradient-to-r from-neon-orange to-neon-green rounded-full opacity-60 animate-ping animation-delay-1000"></div>
-              <div className="absolute top-1/2 -right-10 w-6 h-6 bg-gradient-to-r from-neon-green to-neon-orange rounded-full opacity-60 animate-ping animation-delay-500"></div>
+            <div className="relative">
+              <img
+                src="/Images/Tyric.jpeg"
+                alt="Tyric Ramplin - Software Developer"
+                className="max-w-full h-auto rounded-2xl border-2 border-primary/40 shadow-2xl"
+              />
             </div>
           </div>
         </div>
