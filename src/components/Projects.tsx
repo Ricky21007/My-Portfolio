@@ -64,10 +64,31 @@ const Projects = () => {
   const [filter, setFilter] = useState('all');
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const [previewSrc, setPreviewSrc] = useState<string | null>(null);
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
 
-  const filteredProjects = filter === 'all' 
-    ? projects 
+  const filteredProjects = filter === 'all'
+    ? projects
     : projects.filter(project => project.tags.includes(filter));
+
+  const currentProject = filteredProjects[currentProjectIndex];
+
+  const nextProject = () => {
+    setCurrentProjectIndex((prev) =>
+      prev === filteredProjects.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevProject = () => {
+    setCurrentProjectIndex((prev) =>
+      prev === 0 ? filteredProjects.length - 1 : prev - 1
+    );
+  };
+
+  // Reset index when filter changes
+  const handleFilterChange = (newFilter: string) => {
+    setFilter(newFilter);
+    setCurrentProjectIndex(0);
+  };
 
   const filterOptions = [
     { value: 'all', label: 'All', icon: '🚀', count: projects.length },
@@ -91,7 +112,7 @@ const Projects = () => {
           {filterOptions.map(option => (
             <button
               key={option.value}
-              onClick={() => setFilter(option.value)}
+              onClick={() => handleFilterChange(option.value)}
               className={`group relative px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
                 filter === option.value
                   ? 'bg-gradient-to-r from-neon-cyan to-neon-green text-white scale-105'
@@ -108,15 +129,46 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Compact Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredProjects.map((project, index) => (
-          <div 
-            key={project.id} 
-            className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105 cursor-pointer"
-            onMouseEnter={() => setHoveredProject(project.id)}
+      {/* Single Project Display with Navigation */}
+      {filteredProjects.length > 0 && (
+        <div className="max-w-xl mx-auto">
+          {/* Navigation Controls */}
+          <div className="flex justify-between items-center mb-4">
+            <button
+              onClick={prevProject}
+              disabled={filteredProjects.length <= 1}
+              className="flex items-center gap-1 px-3 py-1.5 text-sm rounded-lg bg-card/50 border border-primary/20 hover:border-primary/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Previous
+            </button>
+
+            <div className="text-center">
+              <span className="text-xs text-muted-foreground">
+                {currentProjectIndex + 1} of {filteredProjects.length}
+              </span>
+            </div>
+
+            <button
+              onClick={nextProject}
+              disabled={filteredProjects.length <= 1}
+              className="flex items-center gap-1 px-3 py-1.5 text-sm rounded-lg bg-card/50 border border-primary/20 hover:border-primary/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+            >
+              Next
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Current Project Display */}
+          <div
+            key={currentProject.id}
+            className="group relative rounded-2xl overflow-hidden transition-all duration-500 cursor-pointer"
+            onMouseEnter={() => setHoveredProject(currentProject.id)}
             onMouseLeave={() => setHoveredProject(null)}
-            style={{ animationDelay: `${index * 0.1}s` }}
           >
             {/* Glow Effect */}
             <div className="absolute -inset-1 bg-gradient-to-r from-project-accent/40 via-neon-green/30 to-neon-cyan/40 rounded-2xl blur opacity-0 group-hover:opacity-60 transition duration-500"></div>
@@ -124,32 +176,32 @@ const Projects = () => {
             {/* Compact Project Card */}
             <div className="relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-project-accent/20 rounded-2xl overflow-hidden group-hover:border-project-accent/60 transition-all duration-500 h-full">
               
-              {/* Compact Image Container */}
-              <div className="relative overflow-hidden h-40">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+              {/* Image Container */}
+              <div className="relative overflow-hidden h-48">
+                <img
+                  src={currentProject.image}
+                  alt={currentProject.title}
+                  className="w-full h-full object-cover"
                 />
                 
                 {/* Status & Year Badges */}
                 <div className="absolute top-2 left-2 right-2 flex justify-between">
-                  <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-gradient-to-r ${statusColors[project.status]} text-white text-xs font-semibold`}>
-                    {project.status === 'completed' ? '✅' : project.status === 'in-progress' ? '🚧' : '📋'}
+                  <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-gradient-to-r ${statusColors[currentProject.status]} text-white text-xs font-semibold`}>
+                    {currentProject.status === 'completed' ? '✅' : currentProject.status === 'in-progress' ? '🚧' : '📋'}
                   </div>
                   <div className="px-2 py-1 rounded-lg bg-background/80 backdrop-blur-sm text-primary font-mono text-xs">
-                    {project.year}
+                    {currentProject.year}
                   </div>
                 </div>
                 
                 {/* Quick Actions Overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-t from-background/90 to-transparent transition-opacity duration-300 ${
-                  hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
+                  hoveredProject === currentProject.id ? 'opacity-100' : 'opacity-0'
                 }`}>
                   <div className="absolute bottom-2 left-2 right-2 flex gap-2">
-                    {project.liveUrl && (
-                      <a 
-                        href={project.liveUrl}
+                    {currentProject.liveUrl && (
+                      <a
+                        href={currentProject.liveUrl}
                         target="_blank"
                         rel="external noopener"
                         onClick={(e) => e.stopPropagation()}
@@ -161,12 +213,12 @@ const Projects = () => {
                         Live
                       </a>
                     )}
-                    
-                    {project.previewVideo && (
+
+                    {currentProject.previewVideo && (
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
-                          setPreviewSrc(project.previewVideo!);
+                          setPreviewSrc(currentProject.previewVideo!);
                         }}
                         className="flex items-center justify-center gap-1 px-3 py-1 bg-neon-green/90 text-white rounded-lg text-xs font-medium hover:bg-neon-green transition-colors"
                       >
@@ -180,72 +232,51 @@ const Projects = () => {
                 </div>
               </div>
               
-              {/* Compact Content */}
+              {/* Content */}
               <div className="p-4 space-y-3">
                 <div>
-                  <h3 className="text-lg font-bold mb-1 group-hover:text-project-accent transition-colors line-clamp-1">
-                    {project.title}
+                  <h3 className="text-lg font-bold mb-1 group-hover:text-project-accent transition-colors">
+                    {currentProject.title}
                   </h3>
-                  <p className="text-xs text-project-accent/80 font-medium mb-2">{project.context}</p>
-                  <p className="text-sm text-foreground/80 leading-relaxed line-clamp-2">{project.description}</p>
+                  <p className="text-xs text-project-accent/80 font-medium mb-2">{currentProject.context}</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">{currentProject.description}</p>
                 </div>
-                
-                {/* Compact Features */}
+
+                {/* Features */}
                 <div className="space-y-2">
+                  <h4 className="text-xs font-medium text-muted-foreground">Key Features</h4>
                   <div className="grid grid-cols-2 gap-1 text-xs">
-                    {project.features.slice(0, 4).map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-1 text-foreground/70 truncate">
+                    {currentProject.features.slice(0, 4).map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-1 text-foreground/80">
                         <span className="text-xs">{feature.split(' ')[0]}</span>
                         <span className="truncate">{feature.split(' ').slice(1).join(' ')}</span>
                       </div>
                     ))}
                   </div>
                 </div>
-                
-                {/* Compact Technologies */}
-                <div className="flex flex-wrap gap-1">
-                  {project.technologies.slice(0, 3).map((tech) => (
-                    <Badge 
-                      key={tech} 
-                      variant="secondary" 
-                      className="text-xs px-2 py-0.5 bg-project-accent/10 border border-project-accent/30 hover:bg-project-accent/20"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                  {project.technologies.length > 3 && (
-                    <Badge variant="secondary" className="text-xs px-2 py-0.5 bg-muted/50">
-                      +{project.technologies.length - 3}
-                    </Badge>
-                  )}
+
+                {/* Technologies */}
+                <div className="space-y-1">
+                  <h4 className="text-xs font-medium text-muted-foreground">Technologies</h4>
+                  <div className="flex flex-wrap gap-1">
+                    {currentProject.technologies.map((tech) => (
+                      <Badge
+                        key={tech}
+                        variant="secondary"
+                        className="text-xs px-2 py-0.5 bg-project-accent/10 border border-project-accent/30 hover:bg-project-accent/20"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        ))}
-      </div>
-
-      {/* Quick Info Panel */}
-      {hoveredProject && (
-        <div className="fixed bottom-6 right-6 max-w-sm bg-card/95 backdrop-blur-xl border border-primary/30 rounded-2xl p-4 shadow-2xl z-40 transition-all duration-300">
-          {(() => {
-            const project = projects.find(p => p.id === hoveredProject);
-            return project ? (
-              <div className="space-y-2">
-                <h4 className="font-bold text-lg">{project.title}</h4>
-                <p className="text-sm text-foreground/80">{project.context}</p>
-                <div className="flex flex-wrap gap-1">
-                  {project.technologies.map(tech => (
-                    <Badge key={tech} variant="outline" className="text-xs">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            ) : null;
-          })()}
         </div>
       )}
+
+
 
       {/* Compact Video Preview Modal */}
       {previewSrc && (

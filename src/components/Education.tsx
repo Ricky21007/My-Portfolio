@@ -40,7 +40,7 @@ const Education = () => {
                 <div className="mt-6">
                   <h4 className="text-sm font-medium text-muted-foreground mb-3">Key Skills Acquired</h4>
                   <div className="flex flex-wrap gap-2">
-                    {["Programming", "Web Development", "Database Design", "Systems Analysis", "Project Management"].map((skill, index) => (
+                    {["Programming", "Web Development", "Project Management", "Java", "Quantitative Techniques"].map((skill, index) => (
                       <span
                         key={skill}
                         className="px-3 py-1 text-sm font-mono bg-education-accent/10 border border-education-accent/30 rounded-full hover:bg-education-accent/20 transition-colors duration-300 opacity-0 animate-fade-in"
@@ -94,7 +94,7 @@ const Education = () => {
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H3m2 0h4m5 0h4m0-16H3m4 0h10m0 0h4m-14 0h4" />
                       </svg>
-                      Hoerskool Tygerberg
+                      Hoerskool Tuygerberg
                     </p>
                     <p className="text-foreground/80 leading-relaxed">
                       Completed foundational education with focus on <span className="text-neon-green font-semibold">academic excellence</span> and <span className="text-neon-blue font-semibold">critical thinking</span>
@@ -106,7 +106,7 @@ const Education = () => {
                 <div className="mt-6">
                   <h4 className="text-sm font-medium text-muted-foreground mb-3">Foundation Building</h4>
                   <div className="flex flex-wrap gap-2">
-                    {["Mathematics", "Sciences", "Languages", "Computer Literacy"].map((subject, index) => (
+                    {["Computer Applications Technology", "Economics", "Biology", "Afrikaans", "English"].map((subject, index) => (
                       <span
                         key={subject}
                         className="px-3 py-1 text-sm font-mono bg-primary/10 border border-primary/30 rounded-full hover:bg-primary/20 transition-colors duration-300 opacity-0 animate-fade-in"
