@@ -233,37 +233,37 @@ const Projects = () => {
               </div>
               
               {/* Content */}
-              <div className="p-6 space-y-4">
+              <div className="p-4 space-y-3">
                 <div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-project-accent transition-colors">
+                  <h3 className="text-lg font-bold mb-1 group-hover:text-project-accent transition-colors">
                     {currentProject.title}
                   </h3>
-                  <p className="text-sm text-project-accent/80 font-medium mb-3">{currentProject.context}</p>
-                  <p className="text-base text-foreground/80 leading-relaxed">{currentProject.description}</p>
+                  <p className="text-xs text-project-accent/80 font-medium mb-2">{currentProject.context}</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">{currentProject.description}</p>
                 </div>
-                
+
                 {/* Features */}
-                <div className="space-y-3">
-                  <h4 className="text-sm font-medium text-muted-foreground">Key Features</h4>
-                  <div className="grid grid-cols-2 gap-2 text-sm">
-                    {currentProject.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-foreground/80">
-                        <span className="text-sm">{feature.split(' ')[0]}</span>
-                        <span>{feature.split(' ').slice(1).join(' ')}</span>
+                <div className="space-y-2">
+                  <h4 className="text-xs font-medium text-muted-foreground">Key Features</h4>
+                  <div className="grid grid-cols-2 gap-1 text-xs">
+                    {currentProject.features.slice(0, 4).map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-1 text-foreground/80">
+                        <span className="text-xs">{feature.split(' ')[0]}</span>
+                        <span className="truncate">{feature.split(' ').slice(1).join(' ')}</span>
                       </div>
                     ))}
                   </div>
                 </div>
-                
+
                 {/* Technologies */}
-                <div className="space-y-2">
-                  <h4 className="text-sm font-medium text-muted-foreground">Technologies</h4>
-                  <div className="flex flex-wrap gap-2">
+                <div className="space-y-1">
+                  <h4 className="text-xs font-medium text-muted-foreground">Technologies</h4>
+                  <div className="flex flex-wrap gap-1">
                     {currentProject.technologies.map((tech) => (
                       <Badge
                         key={tech}
                         variant="secondary"
-                        className="text-sm px-3 py-1 bg-project-accent/10 border border-project-accent/30 hover:bg-project-accent/20"
+                        className="text-xs px-2 py-0.5 bg-project-accent/10 border border-project-accent/30 hover:bg-project-accent/20"
                       >
                         {tech}
                       </Badge>
