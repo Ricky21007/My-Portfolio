@@ -20,6 +20,19 @@ type ProjectType = {
 
 const projects: ProjectType[] = [
   {
+    id: "capaciti-placement",
+    image: "/Images/Placement portal.PNG",
+    title: "Capaciti Placement Portal",
+    description: "Streamlined placement management platform that accelerates the candidate placement process and simplifies communication between candidates, placement companies, and monitoring teams.",
+    context: "CAPACITI Placement Solution",
+    tags: ["react", "frontend"],
+    technologies: ["React", "Vite", "Node.js", "TypeScript", "Tailwind CSS"],
+    features: ["🏢 Company Management", "👥 Candidate Tracking", "💬 Communication Hub", "📊 Interaction Analytics"],
+    liveUrl: "https://capacitiplacementportal.netlify.app",
+    status: "completed",
+    year: "2024"
+  },
+  {
     id: "resource-system",
     image: "/Images/Digital.png",
     title: "Digital Learning Hub",
