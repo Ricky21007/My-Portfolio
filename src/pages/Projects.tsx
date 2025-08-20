@@ -10,7 +10,7 @@ const Projects = () => {
         "Administrative dashboard",
         "Email notifications"
       ],
-      image: "/Images/Placement portal.PNG",
+      image: "/Images/Digital.png",
       githubUrl: "https://github.com/Ricky21007",
       liveUrl: "#"
     },
@@ -43,7 +43,7 @@ const Projects = () => {
       liveUrl: "#"
     },
     {
-      title: "Student Placement Portal",
+      title: "CAPACITI Placement Portal",
       description: "A comprehensive portal for managing student placements, company partnerships, and application tracking.",
       technologies: ["React", "Node.js", "Database", "Authentication"],
       features: [
@@ -52,7 +52,7 @@ const Projects = () => {
         "Application tracking",
         "Automated matching algorithm"
       ],
-      image: "/Images/placeholder.svg",
+      image: "/Images/Placement portal.PNG",
       githubUrl: "https://github.com/Ricky21007",
       liveUrl: "#"
     },
