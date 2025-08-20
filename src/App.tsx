@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from "./components/ui/toaster";
 import Header from './components/Header';
@@ -15,44 +15,18 @@ import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(() => {
-    const saved = localStorage.getItem("theme");
-    return saved === "dark";
-  });
-
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setDarkMode(true);
-      document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("light");
-    } else {
-      setDarkMode(false);
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
-    }
+    // Always use light mode
+    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.add("light");
   }, []);
-
-  const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    localStorage.setItem("theme", newMode ? "dark" : "light");
-
-    if (newMode) {
-      document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("light");
-    } else {
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
-    }
-  };
 
   return (
     <Router>
       <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
         <ScrollProgress />
         <BackToTop />
-        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <Header />
         
         <Routes>
           <Route path="/" element={<Home />} />
