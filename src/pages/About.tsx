@@ -1,39 +1,39 @@
 const About = () => {
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-24 pb-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           
           {/* Page Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">About Me</h1>
-            <p className="text-xl text-muted-foreground">Get to know more about my background and expertise</p>
+            <p className="text-xl text-gray-600">Get to know more about my background and expertise</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             
             {/* Main content */}
             <div className="lg:col-span-2 space-y-8">
-              <div className="bg-card rounded-xl p-8 border border-border shadow-lg">
+              <div className="bg-white rounded-xl p-8 border-2 border-gray-200 shadow-lg">
                 <h2 className="text-2xl font-bold mb-4 text-primary">Who I Am</h2>
-                <p className="text-lg leading-relaxed text-foreground/90 mb-6">
+                <p className="text-lg leading-relaxed text-black mb-6">
                   Hi! I'm <span className="text-primary font-semibold">Tyric Ramplin</span>, a software developer passionate about building responsive, user-friendly websites with modern technologies. I love blending creativity and technology to craft engaging digital experiences.
                 </p>
-                <p className="text-lg leading-relaxed text-foreground/90">
+                <p className="text-lg leading-relaxed text-black">
                   My journey in web development has led to projects like a Web-based Resource Request System, and I'm always learning new skills to stay at the forefront of modern web technologies and AI integration.
                 </p>
               </div>
 
-              <div className="bg-card rounded-xl p-8 border border-border shadow-lg">
+              <div className="bg-white rounded-xl p-8 border-2 border-gray-200 shadow-lg">
                 <h2 className="text-2xl font-bold mb-4 text-primary">My Approach</h2>
-                <p className="text-lg leading-relaxed text-foreground/90">
+                <p className="text-lg leading-relaxed text-black">
                   I believe in creating solutions that not only meet technical requirements but also provide exceptional user experiences. Every project is an opportunity to learn something new and push the boundaries of what's possible.
                 </p>
               </div>
 
-              <div className="bg-card rounded-xl p-8 border border-border shadow-lg">
+              <div className="bg-white rounded-xl p-8 border-2 border-gray-200 shadow-lg">
                 <h2 className="text-2xl font-bold mb-4 text-primary">Let's Connect</h2>
-                <p className="text-lg leading-relaxed text-foreground/90">
+                <p className="text-lg leading-relaxed text-black">
                   Let's create something amazing together! Connect with me and let's build the future of web development.
                 </p>
               </div>
@@ -43,7 +43,7 @@ const About = () => {
             <div className="space-y-8">
               
               {/* Skills showcase */}
-              <div className="bg-card rounded-xl p-6 border border-border shadow-lg">
+              <div className="bg-white rounded-xl p-6 border-2 border-gray-200 shadow-lg">
                 <h3 className="text-xl font-bold mb-6 text-center text-primary">Technical Skills</h3>
                 <div className="grid grid-cols-2 gap-3">
                   {[
@@ -58,16 +58,16 @@ const About = () => {
                   ].map((skill, index) => (
                     <div
                       key={skill}
-                      className="bg-secondary/50 border border-primary/20 rounded-lg p-3 text-center transition-all duration-300 hover:border-primary/50 hover:bg-primary/5"
+                      className="bg-gray-100 border border-gray-300 rounded-lg p-3 text-center transition-all duration-300 hover:border-primary hover:bg-blue-50"
                     >
-                      <span className="text-sm font-medium">{skill}</span>
+                      <span className="text-sm font-medium text-black">{skill}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Social links */}
-              <div className="bg-card rounded-xl p-6 border border-border shadow-lg">
+              <div className="bg-white rounded-xl p-6 border-2 border-gray-200 shadow-lg">
                 <h3 className="text-xl font-bold mb-6 text-center text-primary">Connect With Me</h3>
                 
                 <div className="space-y-4">
@@ -75,7 +75,7 @@ const About = () => {
                     href="https://www.linkedin.com/in/tyric-ramplin-39b028326" 
                     target="_blank" 
                     rel="external nofollow noopener" 
-                    className="flex items-center gap-3 p-4 rounded-lg border border-border bg-secondary/30 transition-all duration-300 hover:border-primary/50 hover:bg-primary/5 hover:scale-105"
+                    className="flex items-center gap-3 p-4 rounded-lg border border-gray-200 bg-gray-50 transition-all duration-300 hover:border-primary hover:bg-blue-50 hover:scale-105"
                   >
                     <div className="p-2 rounded-lg bg-blue-600">
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -83,10 +83,10 @@ const About = () => {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <p className="font-medium text-foreground">LinkedIn</p>
-                      <p className="text-sm text-muted-foreground">Professional Network</p>
+                      <p className="font-medium text-black">LinkedIn</p>
+                      <p className="text-sm text-gray-600">Professional Network</p>
                     </div>
-                    <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </a>
@@ -95,7 +95,7 @@ const About = () => {
                     href="https://github.com/Ricky21007" 
                     target="_blank" 
                     rel="external noopener" 
-                    className="flex items-center gap-3 p-4 rounded-lg border border-border bg-secondary/30 transition-all duration-300 hover:border-primary/50 hover:bg-primary/5 hover:scale-105"
+                    className="flex items-center gap-3 p-4 rounded-lg border border-gray-200 bg-gray-50 transition-all duration-300 hover:border-primary hover:bg-blue-50 hover:scale-105"
                   >
                     <div className="p-2 rounded-lg bg-gray-800">
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -103,10 +103,10 @@ const About = () => {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <p className="font-medium text-foreground">GitHub</p>
-                      <p className="text-sm text-muted-foreground">Code Repository</p>
+                      <p className="font-medium text-black">GitHub</p>
+                      <p className="text-sm text-gray-600">Code Repository</p>
                     </div>
-                    <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </a>
