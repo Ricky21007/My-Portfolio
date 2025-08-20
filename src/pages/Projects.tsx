@@ -209,33 +209,49 @@ const Projects = () => {
 
       {/* Video Modal */}
       {videoModalOpen && (
-        <div className="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4">
-          <div className="relative bg-white rounded-xl overflow-hidden max-w-4xl w-full max-h-[90vh]">
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+          <div className="relative bg-white rounded-xl overflow-hidden max-w-5xl w-full max-h-[95vh] shadow-2xl">
             {/* Close button */}
             <button
               onClick={closeVideoModal}
-              className="absolute top-4 right-4 z-10 bg-black/50 text-white rounded-full p-2 hover:bg-black/70 transition-colors"
+              className="absolute top-4 right-4 z-10 bg-black/70 text-white rounded-full p-3 hover:bg-black/90 transition-all duration-200 hover:scale-110"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            
-            {/* Video */}
-            <video 
-              src="/Images/RatingApp.mp4"
-              className="w-full h-auto"
-              controls
-              autoPlay
-              muted
-            />
-            
+
+            {/* Video Container */}
+            <div className="relative bg-black">
+              <video
+                src="/Images/RatingApp.mp4"
+                className="w-full h-auto max-h-[70vh] object-contain"
+                controls
+                autoPlay
+                muted
+                playsInline
+              />
+            </div>
+
             {/* Modal content */}
-            <div className="p-6">
-              <h3 className="text-2xl font-bold text-primary mb-2">Rating & Review System</h3>
-              <p className="text-gray-700">
+            <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50">
+              <h3 className="text-2xl font-bold text-primary mb-3">Rating & Review System</h3>
+              <p className="text-gray-700 leading-relaxed">
                 Watch this preview to see the Rating & Review System in action. This flexible system can be integrated into various applications with multi-criteria rating, review moderation, and analytics capabilities.
               </p>
+              <div className="mt-4 flex gap-3">
+                <a
+                  href="https://github.com/Ricky21007"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  View Code
+                </a>
+              </div>
             </div>
           </div>
         </div>
