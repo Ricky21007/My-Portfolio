@@ -1,340 +1,262 @@
 import { useState } from 'react';
-import { Badge } from "@/components/ui/badge";
-import SectionWrapper from './SectionWrapper';
-
-type ProjectType = {
-  id: string;
-  image: string;
-  title: string;
-  description: string;
-  context: string;
-  tags: string[];
-  technologies: string[];
-  features: string[];
-  liveUrl?: string;
-  sourceUrl?: string;
-  previewVideo?: string;
-  status: 'completed' | 'in-progress' | 'planning';
-  year: string;
-};
-
-const projects: ProjectType[] = [
-  {
-    id: "capaciti-placement",
-    image: "/Images/Placement portal.PNG",
-    title: "Capaciti Placement Portal",
-    description: "Streamlined placement management platform that accelerates the candidate placement process and simplifies communication between candidates, placement companies, and monitoring teams.",
-    context: "CAPACITI Placement Solution",
-    tags: ["react", "frontend"],
-    technologies: ["React", "Vite", "Node.js", "TypeScript", "Tailwind CSS"],
-    features: ["🏢 Company Management", "👥 Candidate Tracking", "💬 Communication Hub", "📊 Interaction Analytics"],
-    liveUrl: "https://capacitiplacementportal.netlify.app",
-    status: "completed",
-    year: "2024"
-  },
-  {
-    id: "resource-system",
-    image: "/Images/Digital.png",
-    title: "Digital Learning Hub",
-    description: "Enterprise-grade educational resource management platform with advanced user authentication and analytics.",
-    context: "CAPACITI Program 2024",
-    tags: ["frontend", "education"],
-    technologies: ["HTML5", "CSS3", "JavaScript", "PWA"],
-    features: ["🔐 Authentication", "📚 Resource Management", "📊 Analytics", "📱 Mobile-First"],
-    liveUrl: "http://127.0.0.1:5501/public/index.html/",
-    status: "completed",
-    year: "2024"
-  },
-  {
-    id: "travique",
-    image: "/Images/Travique.png",
-    title: "Travique AI Assistant",
-    description: "Next-generation intelligent travel companion with AI-powered recommendations and real-time booking.",
-    context: "Full-Stack Travel Solution",
-    tags: ["react", "ai"],
-    technologies: ["React", "TypeScript", "Node.js", "APIs"],
-    features: ["🤖 AI Recommendations", "🗺️ Interactive Maps", "💰 Price Comparison", "📅 Smart Planning"],
-    liveUrl: "https://aidan2125.github.io/Backend-testing/",
-    status: "completed",
-    year: "2024"
-  },
-  {
-    id: "rating-system",
-    image: "/Images/rating.webp",
-    title: "Universal Rating Engine",
-    description: "Advanced rating and review management platform with sentiment analysis and fraud detection.",
-    context: "Service Excellence Platform",
-    tags: ["react", "analytics"],
-    technologies: ["React", "TypeScript", "Firebase", "Chart.js"],
-    features: ["⭐ Multi-criteria Rating", "📈 Analytics", "🔍 Sentiment Analysis", "🛡️ Fraud Detection"],
-    previewVideo: "/Images/RatingApp.mp4",
-    status: "completed",
-    year: "2024"
-  }
-];
 
 const Projects = () => {
-  const [filter, setFilter] = useState('all');
-  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
-  const [previewSrc, setPreviewSrc] = useState<string | null>(null);
-  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
 
-  const filteredProjects = filter === 'all'
-    ? projects
-    : projects.filter(project => project.tags.includes(filter));
-
-  const currentProject = filteredProjects[currentProjectIndex];
-
-  const nextProject = () => {
-    setCurrentProjectIndex((prev) =>
-      prev === filteredProjects.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const prevProject = () => {
-    setCurrentProjectIndex((prev) =>
-      prev === 0 ? filteredProjects.length - 1 : prev - 1
-    );
-  };
-
-  // Reset index when filter changes
-  const handleFilterChange = (newFilter: string) => {
-    setFilter(newFilter);
-    setCurrentProjectIndex(0);
-  };
-
-  const filterOptions = [
-    { value: 'all', label: 'All', icon: '🚀', count: projects.length },
-    { value: 'frontend', label: 'Frontend', icon: '🎨', count: projects.filter(p => p.tags.includes('frontend')).length },
-    { value: 'react', label: 'React', icon: '⚛️', count: projects.filter(p => p.tags.includes('react')).length },
-    { value: 'ai', label: 'AI', icon: '🤖', count: projects.filter(p => p.tags.includes('ai')).length }
+  const projects = [
+    {
+      title: "Web-based Resource Request System",
+      description: "A comprehensive system for managing resource requests with user authentication, real-time notifications, and administrative controls. Bridge the gap to your dream job with this powerful platform.",
+      technologies: ["React", "Node.js", "MongoDB", "Express"],
+      features: [
+        "User authentication and authorization",
+        "Real-time request tracking",
+        "Administrative dashboard",
+        "Email notifications"
+      ],
+      image: "/Images/Digital.png",
+      githubUrl: "https://github.com/Ricky21007",
+      liveUrl: "https://resource-request-system.vercel.app",
+      isVideo: false,
+      hasPreview: false
+    },
+    {
+      title: "Travique Travel Platform",
+      description: "A travel booking platform with destination browsing, booking management, and user reviews.",
+      technologies: ["React", "JavaScript", "CSS3", "API Integration"],
+      features: [
+        "Destination search and filtering",
+        "Booking management system",
+        "User review system",
+        "Payment integration"
+      ],
+      image: "/Images/Travique.png",
+      githubUrl: "https://github.com/Ricky21007",
+      liveUrl: "https://aidan2125.github.io/Backend-testing/",
+      isVideo: false,
+      hasPreview: false
+    },
+    {
+      title: "CAPACITI Placement Portal",
+      description: "A comprehensive portal for managing student placements, company partnerships, and application tracking.",
+      technologies: ["React", "Node.js", "Database", "Authentication"],
+      features: [
+        "Student profile management",
+        "Company partnership system",
+        "Application tracking",
+        "Automated matching algorithm"
+      ],
+      image: "/Images/Placement portal.PNG",
+      githubUrl: "https://github.com/Ricky21007",
+      liveUrl: "https://capacitiplacementportal.netlify.app",
+      isVideo: false,
+      hasPreview: false
+    },
+    {
+      title: "Rating & Review System",
+      description: "A flexible rating and review system that can be integrated into various applications.",
+      technologies: ["React", "JavaScript", "API Design", "Database"],
+      features: [
+        "Multi-criteria rating system",
+        "Review moderation",
+        "Analytics and insights",
+        "API for integration"
+      ],
+      image: "/Images/rating.webp",
+      videoUrl: "/Images/RatingApp.mp4",
+      githubUrl: "https://github.com/Ricky21007",
+      liveUrl: "",
+      isVideo: false,
+      hasPreview: true
+    }
   ];
 
-  const statusColors = {
-    completed: 'from-neon-green to-green-400',
-    'in-progress': 'from-neon-orange to-orange-400', 
-    planning: 'from-neon-blue to-blue-400'
+  const openVideoModal = () => {
+    setVideoModalOpen(true);
+  };
+
+  const closeVideoModal = () => {
+    setVideoModalOpen(false);
   };
 
   return (
-    <SectionWrapper id="projects" title="Featured Projects" className="projects-frame">
-      
-      {/* Compact Filter Section */}
-      <div className="mb-8">
-        <div className="flex flex-wrap gap-3 justify-center">
-          {filterOptions.map(option => (
-            <button
-              key={option.value}
-              onClick={() => handleFilterChange(option.value)}
-              className={`group relative px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
-                filter === option.value
-                  ? 'bg-gradient-to-r from-neon-cyan to-neon-green text-white scale-105'
-                  : 'bg-card/30 border border-primary/20 backdrop-blur-sm hover:border-primary/50 hover:bg-primary/5'
-              }`}
-            >
-              <div className="flex items-center gap-2">
-                <span className="text-lg">{option.icon}</span>
-                <span>{option.label}</span>
-                <span className="text-xs bg-background/20 px-1.5 py-0.5 rounded-full">{option.count}</span>
+    <div className="min-h-screen pt-24 pb-16 bg-background theme-transition">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          
+          {/* Page Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Projects</h1>
+            <p className="text-xl text-gray-600">Showcase of my development work and technical expertise</p>
+          </div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {projects.map((project, index) => (
+              <div 
+                key={index}
+                className="bg-white rounded-xl border-2 border-gray-200 shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105"
+              >
+                {/* Project Image */}
+                <div className="aspect-video bg-gray-100 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                
+                {/* Project Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-primary mb-3">{project.title}</h3>
+                  <p className="text-black text-sm leading-relaxed mb-4">{project.description}</p>
+                  
+                  {/* Technologies */}
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-black mb-2">Technologies Used:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span 
+                          key={techIndex}
+                          className="px-2 py-1 bg-blue-50 text-primary text-xs rounded-md border border-primary/20"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Key Features */}
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-black mb-2">Key Features:</h4>
+                    <ul className="text-xs text-gray-700 space-y-1">
+                      {project.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start gap-1">
+                          <span className="text-primary mt-1">•</span>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  {/* Action Buttons */}
+                  <div className="flex gap-3">
+                    {project.hasPreview ? (
+                      // Special case for Rating & Review System
+                      <button
+                        onClick={openVideoModal}
+                        className="w-full px-4 py-2 bg-primary text-white rounded-lg text-center text-sm font-medium hover:bg-primary/90 transition-all duration-300"
+                      >
+                        <svg className="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h1m4 0h1m-6-8h8a2 2 0 012 2v8a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2z" />
+                        </svg>
+                        Play Preview
+                      </button>
+                    ) : (
+                      // Regular projects with code and live demo buttons
+                      <>
+                        <a 
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 px-4 py-2 bg-blue-50 text-primary border border-primary/20 rounded-lg text-center text-sm font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                        >
+                          <svg className="w-4 h-4 inline mr-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                          </svg>
+                          Code
+                        </a>
+                        
+                        <a 
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 px-4 py-2 bg-primary text-white rounded-lg text-center text-sm font-medium hover:bg-primary/90 transition-all duration-300"
+                        >
+                          <svg className="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                          Live Demo
+                        </a>
+                      </>
+                    )}
+                  </div>
+                </div>
               </div>
-            </button>
-          ))}
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-16">
+            <div className="bg-white rounded-xl p-8 border-2 border-gray-200 shadow-lg">
+              <h2 className="text-2xl font-bold text-primary mb-4">Interested in My Work?</h2>
+              <p className="text-black mb-6">
+                I'm always excited to work on new projects and collaborate with fellow developers and businesses.
+              </p>
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300"
+              >
+                Get In Touch
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Single Project Display with Navigation */}
-      {filteredProjects.length > 0 && (
-        <div className="max-w-xl mx-auto">
-          {/* Navigation Controls */}
-          <div className="flex justify-between items-center mb-4">
+      {/* Video Modal */}
+      {videoModalOpen && (
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+          <div className="relative bg-white rounded-xl overflow-hidden max-w-5xl w-full max-h-[95vh] shadow-2xl">
+            {/* Close button */}
             <button
-              onClick={prevProject}
-              disabled={filteredProjects.length <= 1}
-              className="flex items-center gap-1 px-3 py-1.5 text-sm rounded-lg bg-card/50 border border-primary/20 hover:border-primary/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              Previous
-            </button>
-
-            <div className="text-center">
-              <span className="text-xs text-muted-foreground">
-                {currentProjectIndex + 1} of {filteredProjects.length}
-              </span>
-            </div>
-
-            <button
-              onClick={nextProject}
-              disabled={filteredProjects.length <= 1}
-              className="flex items-center gap-1 px-3 py-1.5 text-sm rounded-lg bg-card/50 border border-primary/20 hover:border-primary/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
-            >
-              Next
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-
-          {/* Current Project Display */}
-          <div
-            key={currentProject.id}
-            className="group relative rounded-2xl overflow-hidden transition-all duration-500 cursor-pointer"
-            onMouseEnter={() => setHoveredProject(currentProject.id)}
-            onMouseLeave={() => setHoveredProject(null)}
-          >
-            {/* Glow Effect */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-project-accent/40 via-neon-green/30 to-neon-cyan/40 rounded-2xl blur opacity-0 group-hover:opacity-60 transition duration-500"></div>
-            
-            {/* Compact Project Card */}
-            <div className="relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-project-accent/20 rounded-2xl overflow-hidden group-hover:border-project-accent/60 transition-all duration-500 h-full">
-              
-              {/* Image Container */}
-              <div className="relative overflow-hidden h-48">
-                <img
-                  src={currentProject.image}
-                  alt={currentProject.title}
-                  className="w-full h-full object-cover"
-                />
-                
-                {/* Status & Year Badges */}
-                <div className="absolute top-2 left-2 right-2 flex justify-between">
-                  <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-gradient-to-r ${statusColors[currentProject.status]} text-white text-xs font-semibold`}>
-                    {currentProject.status === 'completed' ? '✅' : currentProject.status === 'in-progress' ? '🚧' : '📋'}
-                  </div>
-                  <div className="px-2 py-1 rounded-lg bg-background/80 backdrop-blur-sm text-primary font-mono text-xs">
-                    {currentProject.year}
-                  </div>
-                </div>
-                
-                {/* Quick Actions Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-t from-background/90 to-transparent transition-opacity duration-300 ${
-                  hoveredProject === currentProject.id ? 'opacity-100' : 'opacity-0'
-                }`}>
-                  <div className="absolute bottom-2 left-2 right-2 flex gap-2">
-                    {currentProject.liveUrl && (
-                      <a
-                        href={currentProject.liveUrl}
-                        target="_blank"
-                        rel="external noopener"
-                        onClick={(e) => e.stopPropagation()}
-                        className="flex-1 flex items-center justify-center gap-1 px-3 py-1 bg-primary/90 text-white rounded-lg text-xs font-medium hover:bg-primary transition-colors"
-                      >
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                        Live
-                      </a>
-                    )}
-
-                    {currentProject.previewVideo && (
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setPreviewSrc(currentProject.previewVideo!);
-                        }}
-                        className="flex items-center justify-center gap-1 px-3 py-1 bg-neon-green/90 text-white rounded-lg text-xs font-medium hover:bg-neon-green transition-colors"
-                      >
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                        </svg>
-                        Play
-                      </button>
-                    )}
-                  </div>
-                </div>
-              </div>
-              
-              {/* Content */}
-              <div className="p-4 space-y-3">
-                <div>
-                  <h3 className="text-lg font-bold mb-1 group-hover:text-project-accent transition-colors">
-                    {currentProject.title}
-                  </h3>
-                  <p className="text-xs text-project-accent/80 font-medium mb-2">{currentProject.context}</p>
-                  <p className="text-sm text-foreground/80 leading-relaxed">{currentProject.description}</p>
-                </div>
-
-                {/* Features */}
-                <div className="space-y-2">
-                  <h4 className="text-xs font-medium text-muted-foreground">Key Features</h4>
-                  <div className="grid grid-cols-2 gap-1 text-xs">
-                    {currentProject.features.slice(0, 4).map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-1 text-foreground/80">
-                        <span className="text-xs">{feature.split(' ')[0]}</span>
-                        <span className="truncate">{feature.split(' ').slice(1).join(' ')}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Technologies */}
-                <div className="space-y-1">
-                  <h4 className="text-xs font-medium text-muted-foreground">Technologies</h4>
-                  <div className="flex flex-wrap gap-1">
-                    {currentProject.technologies.map((tech) => (
-                      <Badge
-                        key={tech}
-                        variant="secondary"
-                        className="text-xs px-2 py-0.5 bg-project-accent/10 border border-project-accent/30 hover:bg-project-accent/20"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-
-
-      {/* Compact Video Preview Modal */}
-      {previewSrc && (
-        <div 
-          className="fixed inset-0 bg-background/95 backdrop-blur-xl z-50 flex items-center justify-center p-4"
-          onClick={() => setPreviewSrc(null)}
-        >
-          <div className="relative max-w-4xl w-full" onClick={e => e.stopPropagation()}>
-            <button
-              className="absolute -top-12 right-0 w-10 h-10 flex items-center justify-center rounded-full bg-card/80 backdrop-blur-sm border border-primary/30 text-foreground hover:text-primary transition-all"
-              onClick={() => setPreviewSrc(null)}
+              onClick={closeVideoModal}
+              className="absolute top-4 right-4 z-10 bg-black/70 text-white rounded-full p-3 hover:bg-black/90 transition-all duration-200 hover:scale-110"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            
-            <div className="relative rounded-2xl overflow-hidden border border-primary/30 shadow-2xl">
-              <video 
-                src={previewSrc} 
-                className="w-full max-h-[70vh] rounded-2xl" 
-                controls 
+
+            {/* Video Container */}
+            <div className="relative bg-black">
+              <video
+                src="/Images/RatingApp.mp4"
+                className="w-full h-auto max-h-[70vh] object-contain"
+                controls
                 autoPlay
+                muted
+                playsInline
               />
+            </div>
+
+            {/* Modal content */}
+            <div className="p-6 bg-gradient-to-r from-blue-50 to-indigo-50">
+              <h3 className="text-2xl font-bold text-primary mb-3">Rating & Review System</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Watch this preview to see the Rating & Review System in action. This flexible system can be integrated into various applications with multi-criteria rating, review moderation, and analytics capabilities.
+              </p>
+              <div className="mt-4 flex gap-3">
+                <a
+                  href="https://github.com/Ricky21007"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  View Code
+                </a>
+              </div>
             </div>
           </div>
         </div>
       )}
-
-      <style jsx>{`
-        .line-clamp-1 {
-          display: -webkit-box;
-          -webkit-line-clamp: 1;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-        
-        .line-clamp-2 {
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-      `}</style>
-    </SectionWrapper>
+    </div>
   );
 };
 
