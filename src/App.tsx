@@ -1,61 +1,40 @@
-
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from "./components/ui/toaster";
 import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Education from './components/Education';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import CTA from './components/CTA';
 import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
 
+// Pages
+import Home from './pages/Home';
+import About from './pages/About';
+import Education from './pages/Education';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
+
 function App() {
-  const [darkMode, setDarkMode] = useState(localStorage.getItem("mode") !== "light");
-
   useEffect(() => {
-    const savedMode = localStorage.getItem("mode");
-    if (savedMode === "light") {
-      setDarkMode(false);
-      document.documentElement.classList.add("light");
-    } else {
-      document.documentElement.classList.remove("light");
-    }
+    // Always use light mode
+    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.add("light");
   }, []);
-
-  const toggleDarkMode = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    localStorage.setItem("mode", newMode ? "dark" : "light");
-    
-    if (newMode) {
-      document.documentElement.classList.remove("light");
-    } else {
-      document.documentElement.classList.add("light");
-    }
-  };
 
   return (
     <Router>
       <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
         <ScrollProgress />
         <BackToTop />
-        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <Header />
         
         <Routes>
-          <Route path="/" element={
-            <main>
-              <Hero />
-              <About />
-              <Education />
-              <Projects />
-              <Contact />
-              <CTA />
-            </main>
-          } />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/education" element={<Education />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         
         <Footer />
