@@ -15,10 +15,10 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
   };
 
   const navItems = [
-    { href: "#about", label: "About" },
-    { href: "#education", label: "Education" },
-    { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" }
+    { href: "/about", label: "About" },
+    { href: "/education", label: "Education" },
+    { href: "/projects", label: "Projects" },
+    { href: "/contact", label: "Contact" }
   ];
 
   return (
@@ -28,14 +28,15 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             
-            {/* Logo with gradient animation */}
+            {/* Logo with professional styling */}
             <div className="relative group">
-              <h1 className="font-bold text-xl md:text-2xl font-mono cursor-pointer transition-all duration-300 group-hover:scale-105">
-                <span className="bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink bg-clip-text text-transparent bg-size-200 animate-gradient-shift">
-                  &lt;Tyric/&gt;
-                </span>
-              </h1>
-              <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan/20 via-neon-purple/20 to-neon-pink/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+              <a href="/" className="block">
+                <h1 className="font-bold text-xl md:text-2xl font-mono cursor-pointer transition-all duration-300 group-hover:scale-105">
+                  <span className="text-primary">
+                    &lt;Tyric/&gt;
+                  </span>
+                </h1>
+              </a>
             </div>
             
             {/* Desktop Navigation */}
