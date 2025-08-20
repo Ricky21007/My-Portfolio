@@ -8,8 +8,8 @@
 /* Modern professional color scheme */
 @layer base {
   :root {
-    /* Professional light theme - white background with darker steel blue accents */
-    --background: 0 0% 100%; /* Pure white background */
+    /* Professional light theme - light gray background with space blue accents */
+    --background: 220 14% 96%; /* Light gray background */
     --foreground: 0 0% 0%; /* Black text */
 
     --card: 0 0% 100%; /* White cards */
@@ -18,8 +18,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    --primary: 215 84% 45%; /* Darker steel blue for headings and important elements */
-    --primary-foreground: 0 0% 100%; /* White text on darker steel blue */
+    --primary: 221 83% 53%; /* Space blue for headings and important elements */
+    --primary-foreground: 0 0% 100%; /* White text on space blue */
 
     --secondary: 0 0% 96%; /* Very light gray */
     --secondary-foreground: 0 0% 0%;
@@ -27,7 +27,7 @@
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%; /* Medium gray for muted text */
 
-    --accent: 215 84% 45%; /* Darker steel blue accent */
+    --accent: 221 83% 53%; /* Space blue accent */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
@@ -35,29 +35,29 @@
 
     --border: 0 0% 90%; /* Light gray borders */
     --input: 0 0% 100%; /* White inputs */
-    --ring: 215 84% 45%;
+    --ring: 221 83% 53%;
 
     --radius: 0.5rem;
 
     /* Professional color palette */
-    --steel-blue: 215 84% 45%; /* Primary darker steel blue */
-    --steel-blue-light: 215 84% 55%; /* Lighter steel blue */
-    --steel-blue-dark: 215 84% 35%; /* Even darker steel blue */
+    --space-blue: 221 83% 53%; /* Primary space blue */
+    --space-blue-light: 221 83% 63%; /* Lighter space blue */
+    --space-blue-dark: 221 83% 43%; /* Darker space blue */
     --white: 0 0% 100%; /* Pure white */
     --black: 0 0% 0%; /* Pure black */
     --gray-light: 0 0% 96%; /* Light gray */
     --gray-medium: 0 0% 45%; /* Medium gray */
 
-    /* Gradient colors - darker steel blue variations */
-    --gradient-start: 215 84% 45%;
-    --gradient-middle: 215 84% 55%;
-    --gradient-end: 215 84% 35%;
+    /* Gradient colors - space blue variations */
+    --gradient-start: 221 83% 53%;
+    --gradient-middle: 221 83% 63%;
+    --gradient-end: 221 83% 43%;
 
-    /* Section specific accents - all darker steel blue variations */
-    --hero-accent: 215 84% 45%;
-    --education-accent: 215 84% 45%;
-    --project-accent: 215 84% 45%;
-    --contact-accent: 215 84% 45%;
+    /* Section specific accents - all space blue variations */
+    --hero-accent: 221 83% 53%;
+    --education-accent: 221 83% 53%;
+    --project-accent: 221 83% 53%;
+    --contact-accent: 221 83% 53%;
   }
 
   .dark {
@@ -71,7 +71,7 @@
     --popover: 224 71% 4%;
     --popover-foreground: 213 31% 91%;
 
-    --primary: 215 84% 55%; /* Slightly lighter steel blue for dark mode */
+    --primary: 221 83% 63%; /* Slightly lighter space blue for dark mode */
     --primary-foreground: 224 71% 4%;
 
     --secondary: 217 32% 17%; /* Dark blue-gray */
@@ -80,7 +80,7 @@
     --muted: 217 32% 17%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 215 84% 55%; /* Slightly lighter steel blue accent for dark mode */
+    --accent: 221 83% 63%; /* Slightly lighter space blue accent for dark mode */
     --accent-foreground: 224 71% 4%;
 
     --destructive: 0 72% 51%;
@@ -88,25 +88,25 @@
 
     --border: 217 32% 17%;
     --input: 217 32% 17%;
-    --ring: 215 84% 55%;
+    --ring: 221 83% 63%;
 
-    /* Dark theme steel blue variations */
-    --steel-blue: 215 84% 55%;
-    --steel-blue-light: 215 84% 65%;
-    --steel-blue-dark: 215 84% 45%;
+    /* Dark theme space blue variations */
+    --space-blue: 221 83% 63%;
+    --space-blue-light: 221 83% 73%;
+    --space-blue-dark: 221 83% 53%;
     --white: 0 0% 98%;
     --black: 0 0% 0%;
     --gray-light: 215 20% 88%;
     --gray-medium: 215 15% 55%;
 
-    --gradient-start: 215 84% 55%;
-    --gradient-middle: 215 84% 65%;
-    --gradient-end: 215 84% 45%;
+    --gradient-start: 221 83% 63%;
+    --gradient-middle: 221 83% 73%;
+    --gradient-end: 221 83% 53%;
 
-    --hero-accent: 215 84% 55%;
-    --education-accent: 215 84% 55%;
-    --project-accent: 215 84% 55%;
-    --contact-accent: 215 84% 55%;
+    --hero-accent: 221 83% 63%;
+    --education-accent: 221 83% 63%;
+    --project-accent: 221 83% 63%;
+    --contact-accent: 221 83% 63%;
   }
 }
 
