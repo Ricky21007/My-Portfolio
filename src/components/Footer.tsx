@@ -10,7 +10,10 @@ const Footer = () => {
         <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-gradient-to-r from-neon-pink/10 to-neon-green/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative glass border-t border-primary/20 backdrop-blur-xl py-12">
+      <div className="relative border-t border-primary/20 backdrop-blur-xl py-12" style={{
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(30, 30, 30, 0.4))',
+        backdropFilter: 'blur(20px)'
+      }}>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             
