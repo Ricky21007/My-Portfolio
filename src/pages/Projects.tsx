@@ -12,7 +12,8 @@ const Projects = () => {
       ],
       image: "/Images/Digital.png",
       githubUrl: "https://github.com/Ricky21007",
-      liveUrl: "#"
+      liveUrl: "https://resource-request-system.vercel.app",
+      isVideo: false
     },
     {
       title: "Travique Travel Platform",
@@ -26,21 +27,8 @@ const Projects = () => {
       ],
       image: "/Images/Travique.png",
       githubUrl: "https://github.com/Ricky21007",
-      liveUrl: "#"
-    },
-    {
-      title: "Smart Chatbot Interface",
-      description: "An intelligent chatbot interface with natural language processing and contextual responses.",
-      technologies: ["React", "AI/ML APIs", "JavaScript", "CSS"],
-      features: [
-        "Natural language processing",
-        "Contextual responses",
-        "Multi-language support",
-        "Analytics dashboard"
-      ],
-      image: "/Images/Chatbot.PNG",
-      githubUrl: "https://github.com/Ricky21007",
-      liveUrl: "#"
+      liveUrl: "https://travique-travel.vercel.app",
+      isVideo: false
     },
     {
       title: "CAPACITI Placement Portal",
@@ -54,7 +42,8 @@ const Projects = () => {
       ],
       image: "/Images/Placement portal.PNG",
       githubUrl: "https://github.com/Ricky21007",
-      liveUrl: "#"
+      liveUrl: "https://capaciti-placement.vercel.app",
+      isVideo: false
     },
     {
       title: "Rating & Review System",
@@ -66,9 +55,10 @@ const Projects = () => {
         "Analytics and insights",
         "API for integration"
       ],
-      image: "/Images/rating.webp",
+      image: "/Images/RatingApp.mp4",
       githubUrl: "https://github.com/Ricky21007",
-      liveUrl: "#"
+      liveUrl: "https://rating-review-system.vercel.app",
+      isVideo: true
     }
   ];
 
@@ -84,19 +74,30 @@ const Projects = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <div 
                 key={index}
                 className="bg-white rounded-xl border-2 border-gray-200 shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
-                {/* Project Image */}
+                {/* Project Image or Video */}
                 <div className="aspect-video bg-gray-100 overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                  />
+                  {project.isVideo ? (
+                    <video 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                      controls
+                      muted
+                      loop
+                    />
+                  ) : (
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                    />
+                  )}
                 </div>
                 
                 {/* Project Content */}
@@ -146,19 +147,17 @@ const Projects = () => {
                       Code
                     </a>
                     
-                    {project.liveUrl !== "#" && (
-                      <a 
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 px-4 py-2 bg-primary text-white rounded-lg text-center text-sm font-medium hover:bg-primary/90 transition-all duration-300"
-                      >
-                        <svg className="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                        Live Demo
-                      </a>
-                    )}
+                    <a 
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 px-4 py-2 bg-primary text-white rounded-lg text-center text-sm font-medium hover:bg-primary/90 transition-all duration-300"
+                    >
+                      <svg className="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      Live Demo
+                    </a>
                   </div>
                 </div>
               </div>
