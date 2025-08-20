@@ -2,7 +2,7 @@ const Projects = () => {
   const projects = [
     {
       title: "Web-based Resource Request System",
-      description: "A comprehensive system for managing resource requests with user authentication, real-time notifications, and administrative controls.",
+      description: "A comprehensive system for managing resource requests with user authentication, real-time notifications, and administrative controls. Bridge the gap to your dream job with this powerful platform.",
       technologies: ["React", "Node.js", "MongoDB", "Express"],
       features: [
         "User authentication and authorization",
@@ -10,21 +10,7 @@ const Projects = () => {
         "Administrative dashboard",
         "Email notifications"
       ],
-      image: "/Images/placeholder.svg",
-      githubUrl: "https://github.com/Ricky21007",
-      liveUrl: "#"
-    },
-    {
-      title: "Digital Solutions Platform", 
-      description: "A modern platform showcasing digital services with responsive design and interactive user interface.",
-      technologies: ["React", "TypeScript", "Tailwind CSS"],
-      features: [
-        "Responsive design",
-        "Interactive UI components",
-        "Performance optimized",
-        "Modern design patterns"
-      ],
-      image: "/Images/Digital.png",
+      image: "/Images/Placement portal.PNG",
       githubUrl: "https://github.com/Ricky21007",
       liveUrl: "#"
     },
@@ -66,7 +52,7 @@ const Projects = () => {
         "Application tracking",
         "Automated matching algorithm"
       ],
-      image: "/Images/Placement portal.PNG",
+      image: "/Images/placeholder.svg",
       githubUrl: "https://github.com/Ricky21007",
       liveUrl: "#"
     },
