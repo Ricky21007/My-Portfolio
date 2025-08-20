@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const Home = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center bg-background relative overflow-hidden pt-20">
+    <section className="min-h-screen flex flex-col justify-center items-center bg-white relative overflow-hidden pt-20">
       <div className="container mx-auto px-4 relative z-20">
         <div className="flex flex-col md:flex-row items-center justify-between gap-16 max-w-6xl mx-auto">
           
@@ -12,13 +12,13 @@ const Home = () => {
             {/* Professional greeting */}
             <div className="space-y-6">
               <div className="space-y-2">
-                <p className="text-lg md:text-xl text-muted-foreground">
+                <p className="text-lg md:text-xl text-gray-600">
                   Hello, I'm
                 </p>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold">
                   <span className="text-primary">TYRIC RAMPLIN</span>
                 </h1>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground/80">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-black">
                   Software Developer
                 </h2>
               </div>
@@ -26,8 +26,8 @@ const Home = () => {
 
             {/* Professional description */}
             <div className="space-y-6">
-              <p className="text-lg md:text-xl leading-relaxed max-w-2xl text-foreground/90">
-                Passionate about creating innovative digital solutions with modern web technologies. 
+              <p className="text-lg md:text-xl leading-relaxed max-w-2xl text-black">
+                Passionate about creating innovative digital solutions with modern web technologies.
                 I specialize in building responsive, user-friendly applications that deliver exceptional experiences.
               </p>
             </div>
