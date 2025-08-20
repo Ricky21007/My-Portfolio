@@ -1,13 +1,8 @@
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
-interface HeaderProps {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-}
-
-const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
+const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -61,23 +56,7 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
 
             {/* Right side controls */}
             <div className="flex items-center space-x-4">
-              
-              {/* Theme toggle with enhanced styling */}
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                onClick={toggleDarkMode} 
-                className="relative group w-10 h-10 rounded-full border border-primary/30 bg-card/20 backdrop-blur-sm hover:border-primary hover:bg-primary/10 transition-all duration-300"
-                aria-label="Toggle dark mode"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                {darkMode ? (
-                  <Sun className="h-5 w-5 text-primary relative z-10 transition-transform group-hover:rotate-12" />
-                ) : (
-                  <Moon className="h-5 w-5 text-primary relative z-10 transition-transform group-hover:rotate-12" />
-                )}
-              </Button>
-              
+
               {/* Mobile Menu Toggle */}
               <div className="md:hidden">
                 <Button

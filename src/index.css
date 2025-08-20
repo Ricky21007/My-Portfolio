@@ -18,7 +18,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    --primary: 221 83% 53%; /* Space blue for headings and important elements */
+    --primary: 214 80% 30%; /* Navy blue for headings and important elements */
     --primary-foreground: 0 0% 100%; /* White text on space blue */
 
     --secondary: 0 0% 96%; /* Very light gray */
@@ -27,7 +27,7 @@
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%; /* Medium gray for muted text */
 
-    --accent: 221 83% 53%; /* Space blue accent */
+    --accent: 214 80% 30%; /* Navy blue accent */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
@@ -35,79 +35,31 @@
 
     --border: 0 0% 90%; /* Light gray borders */
     --input: 0 0% 100%; /* White inputs */
-    --ring: 221 83% 53%;
+    --ring: 214 80% 30%;
 
     --radius: 0.5rem;
 
     /* Professional color palette */
-    --space-blue: 221 83% 53%; /* Primary space blue */
-    --space-blue-light: 221 83% 63%; /* Lighter space blue */
-    --space-blue-dark: 221 83% 43%; /* Darker space blue */
+    --navy-blue: 214 80% 30%; /* Primary navy blue */
+    --navy-blue-light: 214 80% 40%; /* Lighter navy blue */
+    --navy-blue-dark: 214 80% 20%; /* Darker navy blue */
     --white: 0 0% 100%; /* Pure white */
     --black: 0 0% 0%; /* Pure black */
     --gray-light: 0 0% 96%; /* Light gray */
     --gray-medium: 0 0% 45%; /* Medium gray */
 
-    /* Gradient colors - space blue variations */
-    --gradient-start: 221 83% 53%;
-    --gradient-middle: 221 83% 63%;
-    --gradient-end: 221 83% 43%;
+    /* Gradient colors - navy blue variations */
+    --gradient-start: 214 80% 30%;
+    --gradient-middle: 214 80% 40%;
+    --gradient-end: 214 80% 20%;
 
-    /* Section specific accents - all space blue variations */
-    --hero-accent: 221 83% 53%;
-    --education-accent: 221 83% 53%;
-    --project-accent: 221 83% 53%;
-    --contact-accent: 221 83% 53%;
+    /* Section specific accents - all navy blue variations */
+    --hero-accent: 214 80% 30%;
+    --education-accent: 214 80% 30%;
+    --project-accent: 214 80% 30%;
+    --contact-accent: 214 80% 30%;
   }
 
-  .dark {
-    /* Professional dark theme - dark background with darker steel blue accents */
-    --background: 224 71% 4%; /* Deep dark blue-black */
-    --foreground: 213 31% 91%; /* Bright white-blue */
-
-    --card: 224 71% 6%; /* Slightly lighter dark */
-    --card-foreground: 213 31% 91%;
-
-    --popover: 224 71% 4%;
-    --popover-foreground: 213 31% 91%;
-
-    --primary: 221 83% 63%; /* Slightly lighter space blue for dark mode */
-    --primary-foreground: 224 71% 4%;
-
-    --secondary: 217 32% 17%; /* Dark blue-gray */
-    --secondary-foreground: 213 31% 91%;
-
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 221 83% 63%; /* Slightly lighter space blue accent for dark mode */
-    --accent-foreground: 224 71% 4%;
-
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 221 83% 63%;
-
-    /* Dark theme space blue variations */
-    --space-blue: 221 83% 63%;
-    --space-blue-light: 221 83% 73%;
-    --space-blue-dark: 221 83% 53%;
-    --white: 0 0% 98%;
-    --black: 0 0% 0%;
-    --gray-light: 215 20% 88%;
-    --gray-medium: 215 15% 55%;
-
-    --gradient-start: 221 83% 63%;
-    --gradient-middle: 221 83% 73%;
-    --gradient-end: 221 83% 53%;
-
-    --hero-accent: 221 83% 63%;
-    --education-accent: 221 83% 63%;
-    --project-accent: 221 83% 63%;
-    --contact-accent: 221 83% 63%;
-  }
 }
 
 @layer base {
