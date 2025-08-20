@@ -30,19 +30,31 @@ function App() {
         <section id="home">
           <Hero />
         </section>
-        
+
+        {/* Section Divider */}
+        <div className="w-full h-px bg-primary"></div>
+
         <section id="about">
           <About />
         </section>
-        
+
+        {/* Section Divider */}
+        <div className="w-full h-px bg-primary"></div>
+
         <section id="education">
           <Education />
         </section>
-        
+
+        {/* Section Divider */}
+        <div className="w-full h-px bg-primary"></div>
+
         <section id="projects">
           <Projects />
         </section>
-        
+
+        {/* Section Divider */}
+        <div className="w-full h-px bg-primary"></div>
+
         <section id="contact">
           <Contact />
         </section>
