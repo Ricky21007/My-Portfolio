@@ -42,10 +42,13 @@ const Education = () => {
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                           {[
                             "Programming",
-                            "Web Development", 
+                            "Web Development",
                             "Project Management",
                             "Java",
-                            "Quantitative Techniques"
+                            "Quantitative Techniques",
+                            "Software Development",
+                            "Information Systems",
+                            "Mobile Commerce"
                           ].map((skill, index) => (
                             <div
                               key={skill}
@@ -74,7 +77,7 @@ const Education = () => {
                       <h3 className="text-2xl font-bold text-primary mb-2">
                         National Senior Certificate
                       </h3>
-                      <p className="text-lg text-gray-600 mb-4 font-semibold">Hoerskool Tuygerberg</p>
+                      <p className="text-lg text-gray-600 mb-4 font-semibold">Hoërskool Tygerberg</p>
                       <p className="text-gray-800 mb-4 leading-relaxed">
                         Completed foundational education with focus on academic excellence and critical thinking
                       </p>
