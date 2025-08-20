@@ -8,103 +8,103 @@
 /* Modern cyberpunk color scheme */
 @layer base {
   :root {
-    /* Dark theme - cyberpunk neon */
-    --background: 224 71% 4%; /* Deep dark blue-black */
-    --foreground: 213 31% 91%; /* Bright white-blue */
+    /* Professional dark theme - steel blue and white */
+    --background: 215 28% 17%; /* Dark steel blue */
+    --foreground: 0 0% 98%; /* Clean white */
 
-    --card: 224 71% 6%; /* Slightly lighter dark */
-    --card-foreground: 213 31% 91%;
+    --card: 215 28% 20%; /* Slightly lighter steel */
+    --card-foreground: 0 0% 98%;
 
-    --popover: 224 71% 4%;
-    --popover-foreground: 213 31% 91%;
+    --popover: 215 28% 17%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 177 70% 41%; /* Cyan accent */
-    --primary-foreground: 224 71% 4%;
+    --primary: 215 84% 56%; /* Steel blue */
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 217 32% 17%; /* Dark blue-gray */
-    --secondary-foreground: 213 31% 91%;
+    --secondary: 215 20% 25%; /* Darker steel gray */
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 215 20% 25%;
+    --muted-foreground: 215 10% 70%;
 
-    --accent: 142 69% 58%; /* Green accent */
-    --accent-foreground: 224 71% 4%;
+    --accent: 215 84% 56%; /* Steel blue accent */
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 177 70% 41%;
+    --border: 215 20% 30%;
+    --input: 215 20% 25%;
+    --ring: 215 84% 56%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Custom neon colors */
-    --neon-cyan: 177 70% 41%; /* #1dd1a1 */
-    --neon-green: 142 69% 58%; /* #22c55e */
-    --neon-orange: 25 95% 53%; /* #f97316 */
-    --neon-blue: 213 93% 68%; /* #3b82f6 */
-    --neon-yellow: 48 96% 53%; /* #eab308 */
-    --neon-teal: 173 58% 39%; /* #14b8a6 */
+    /* Professional color palette */
+    --steel-blue: 215 84% 56%; /* Primary steel blue */
+    --steel-blue-light: 215 84% 66%; /* Lighter steel blue */
+    --steel-blue-dark: 215 84% 46%; /* Darker steel blue */
+    --white: 0 0% 98%; /* Clean white */
+    --gray-light: 215 20% 88%; /* Light gray */
+    --gray-medium: 215 15% 55%; /* Medium gray */
 
-    /* Gradient colors */
-    --gradient-start: 177 70% 41%;
-    --gradient-middle: 142 69% 58%;
-    --gradient-end: 25 95% 53%;
+    /* Gradient colors - steel blue variations */
+    --gradient-start: 215 84% 56%;
+    --gradient-middle: 215 84% 66%;
+    --gradient-end: 215 84% 46%;
 
-    /* Section specific accents */
-    --hero-accent: 177 70% 41%;
-    --education-accent: 142 69% 58%;
-    --project-accent: 25 95% 53%;
-    --contact-accent: 142 69% 58%;
+    /* Section specific accents - all steel blue variations */
+    --hero-accent: 215 84% 56%;
+    --education-accent: 215 84% 66%;
+    --project-accent: 215 84% 46%;
+    --contact-accent: 215 84% 56%;
   }
 
   .light {
-    /* Light theme - vibrant and visible */
-    --background: 220 25% 97%; /* Slightly cooler white */
-    --foreground: 222 84% 8%; /* Darker text for better contrast */
+    /* Professional light theme - white with steel blue accents */
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 215 28% 17%; /* Dark steel blue text */
 
-    --card: 220 20% 99%; /* Pure white with slight cool tint */
-    --card-foreground: 222 84% 8%;
+    --card: 0 0% 98%; /* Off-white cards */
+    --card-foreground: 215 28% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 84% 8%;
+    --popover-foreground: 215 28% 17%;
 
-    --primary: 210 100% 45%; /* Vibrant blue */
+    --primary: 215 84% 56%; /* Steel blue */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 90%; /* Light gray with cool tint */
-    --secondary-foreground: 222 84% 8%;
+    --secondary: 215 20% 95%; /* Very light steel gray */
+    --secondary-foreground: 215 28% 17%;
 
-    --muted: 220 15% 92%;
-    --muted-foreground: 215 25% 20%; /* Darker for better readability */
+    --muted: 215 20% 95%;
+    --muted-foreground: 215 15% 40%; /* Medium gray for readability */
 
-    --accent: 142 75% 45%; /* Vibrant green */
+    --accent: 215 84% 56%; /* Steel blue accent */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 85% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 85%; /* More visible borders */
-    --input: 220 13% 88%;
-    --ring: 210 100% 45%;
+    --border: 215 20% 85%; /* Light gray borders */
+    --input: 215 20% 95%;
+    --ring: 215 84% 56%;
 
-    /* Light theme vibrant neon colors */
-    --neon-cyan: 185 85% 45%; /* More vibrant cyan */
-    --neon-green: 142 75% 45%; /* Vibrant green */
-    --neon-orange: 20 95% 50%; /* Bright orange */
-    --neon-blue: 210 100% 55%; /* Electric blue */
-    --neon-yellow: 48 96% 53%; /* Bright yellow */
-    --neon-teal: 173 58% 39%; /* Teal */
+    /* Professional color palette for light mode */
+    --steel-blue: 215 84% 56%; /* Primary steel blue */
+    --steel-blue-light: 215 84% 66%; /* Lighter steel blue */
+    --steel-blue-dark: 215 84% 46%; /* Darker steel blue */
+    --white: 0 0% 100%; /* Pure white */
+    --gray-light: 215 20% 95%; /* Light gray */
+    --gray-medium: 215 15% 55%; /* Medium gray */
 
-    --gradient-start: 185 85% 45%;
-    --gradient-middle: 142 75% 45%;
-    --gradient-end: 20 95% 50%;
+    --gradient-start: 215 84% 56%;
+    --gradient-middle: 215 84% 66%;
+    --gradient-end: 215 84% 46%;
 
-    --hero-accent: 185 85% 45%;
-    --education-accent: 142 75% 45%;
-    --project-accent: 20 95% 50%;
-    --contact-accent: 142 75% 45%;
+    --hero-accent: 215 84% 56%;
+    --education-accent: 215 84% 66%;
+    --project-accent: 215 84% 46%;
+    --contact-accent: 215 84% 56%;
   }
 }
 
