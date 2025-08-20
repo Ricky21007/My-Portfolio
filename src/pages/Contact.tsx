@@ -35,14 +35,14 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-24 pb-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           
           {/* Page Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Get In Touch</h1>
-            <p className="text-xl text-muted-foreground">Let's discuss your next project or collaboration opportunity</p>
+            <p className="text-xl text-gray-600">Let's discuss your next project or collaboration opportunity</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -51,7 +51,7 @@ const Contact = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl font-bold text-primary mb-6">Contact Information</h2>
-                <p className="text-foreground/90 leading-relaxed mb-8">
+                <p className="text-black leading-relaxed mb-8">
                   I'm always interested in hearing about new opportunities and collaborations. 
                   Whether you have a project in mind or just want to say hello, feel free to reach out!
                 </p>
@@ -60,39 +60,39 @@ const Contact = () => {
               {/* Contact Methods */}
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center">
                     <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Email</h3>
-                    <p className="text-muted-foreground">tyricramplin@email.com</p>
+                    <h3 className="font-semibold text-black">Email</h3>
+                    <p className="text-gray-600">tyricramplin@email.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center">
                     <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Location</h3>
-                    <p className="text-muted-foreground">Jamaica</p>
+                    <h3 className="font-semibold text-black">Location</h3>
+                    <p className="text-gray-600">Jamaica</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center">
                     <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Response Time</h3>
-                    <p className="text-muted-foreground">Within 24 hours</p>
+                    <h3 className="font-semibold text-black">Response Time</h3>
+                    <p className="text-gray-600">Within 24 hours</p>
                   </div>
                 </div>
               </div>
@@ -127,12 +127,12 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-card rounded-xl p-8 border border-border shadow-lg">
+            <div className="bg-white rounded-xl p-8 border-2 border-gray-200 shadow-lg">
               <h2 className="text-2xl font-bold text-primary mb-6">Send Me a Message</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-black mb-2">
                     Full Name
                   </label>
                   <Input
@@ -143,12 +143,12 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     placeholder="Your full name"
-                    className="w-full"
+                    className="w-full border-gray-300 focus:border-primary focus:ring-primary"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-black mb-2">
                     Email Address
                   </label>
                   <Input
@@ -159,12 +159,12 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     placeholder="your.email@example.com"
-                    className="w-full"
+                    className="w-full border-gray-300 focus:border-primary focus:ring-primary"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-black mb-2">
                     Subject
                   </label>
                   <Input
@@ -175,12 +175,12 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     placeholder="What's this about?"
-                    className="w-full"
+                    className="w-full border-gray-300 focus:border-primary focus:ring-primary"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-black mb-2">
                     Message
                   </label>
                   <Textarea
@@ -191,14 +191,14 @@ const Contact = () => {
                     required
                     placeholder="Tell me about your project or just say hello..."
                     rows={6}
-                    className="w-full resize-none"
+                    className="w-full resize-none border-gray-300 focus:border-primary focus:ring-primary"
                   />
                 </div>
 
                 <Button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="w-full py-3 text-lg font-semibold"
+                  className="w-full py-3 text-lg font-semibold bg-primary hover:bg-primary/90"
                 >
                   {isSubmitting ? (
                     <>
