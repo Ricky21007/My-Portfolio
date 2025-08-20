@@ -15,26 +15,34 @@ import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
 function App() {
-  const [darkMode, setDarkMode] = useState(localStorage.getItem("mode") !== "light");
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    return saved === "dark";
+  });
 
   useEffect(() => {
-    const savedMode = localStorage.getItem("mode");
-    if (savedMode === "light") {
-      setDarkMode(false);
-      document.documentElement.classList.add("light");
-    } else {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
       document.documentElement.classList.remove("light");
+    } else {
+      setDarkMode(false);
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
     }
   }, []);
 
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
-    localStorage.setItem("mode", newMode ? "dark" : "light");
-    
+    localStorage.setItem("theme", newMode ? "dark" : "light");
+
     if (newMode) {
+      document.documentElement.classList.add("dark");
       document.documentElement.classList.remove("light");
     } else {
+      document.documentElement.classList.remove("dark");
       document.documentElement.classList.add("light");
     }
   };
