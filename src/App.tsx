@@ -1,18 +1,16 @@
 import { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from "./components/ui/toaster";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
 
-// Pages
-import Home from './pages/Home';
-import About from './pages/About';
-import Education from './pages/Education';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
-import NotFound from './pages/NotFound';
+// Import components instead of pages
+import Hero from './components/Hero';
+import About from './components/About';
+import Education from './components/Education';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 function App() {
   useEffect(() => {
@@ -22,25 +20,37 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-        <ScrollProgress />
-        <BackToTop />
-        <Header />
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+      <ScrollProgress />
+      <BackToTop />
+      <Header />
+      
+      {/* Single page layout with all sections */}
+      <main>
+        <section id="home">
+          <Hero />
+        </section>
         
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <section id="about">
+          <About />
+        </section>
         
-        <Footer />
-        <Toaster />
-      </div>
-    </Router>
+        <section id="education">
+          <Education />
+        </section>
+        
+        <section id="projects">
+          <Projects />
+        </section>
+        
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
+      
+      <Footer />
+      <Toaster />
+    </div>
   );
 }
 
