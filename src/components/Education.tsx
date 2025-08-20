@@ -48,8 +48,7 @@ const Education = () => {
                             "Quantitative Techniques",
                             "Software Development",
                             "Information Systems",
-                            "Mobile Commerce",
-                            "Database Systems Management"
+                            "Mobile Commerce"
                           ].map((skill, index) => (
                             <div
                               key={skill}
