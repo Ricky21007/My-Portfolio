@@ -87,7 +87,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-white">
+    <div className="min-h-screen pt-24 pb-16 bg-background theme-transition">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           

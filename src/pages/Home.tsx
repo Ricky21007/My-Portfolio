@@ -64,14 +64,14 @@ const Home = () => {
           {/* Profile image */}
           <div className="md:w-2/5 flex justify-center md:justify-end">
             <div className="relative">
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+              <div className="w-80 h-80 md:w-96 md:h-96 rounded-xl overflow-hidden border-4 border-primary/20 shadow-2xl">
                 <img
                   src="/Images/Tyric.jpeg"
                   alt="Tyric Ramplin - Software Developer"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -inset-4 rounded-full border border-primary/10"></div>
+              <div className="absolute -inset-4 rounded-xl border border-primary/10"></div>
             </div>
           </div>
         </div>
