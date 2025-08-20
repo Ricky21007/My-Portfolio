@@ -1,0 +1,206 @@
+const Projects = () => {
+  const projects = [
+    {
+      title: "Web-based Resource Request System",
+      description: "A comprehensive system for managing resource requests with user authentication, real-time notifications, and administrative controls.",
+      technologies: ["React", "Node.js", "MongoDB", "Express"],
+      features: [
+        "User authentication and authorization",
+        "Real-time request tracking",
+        "Administrative dashboard",
+        "Email notifications"
+      ],
+      image: "/Images/placeholder.svg",
+      githubUrl: "https://github.com/Ricky21007",
+      liveUrl: "#"
+    },
+    {
+      title: "Digital Solutions Platform", 
+      description: "A modern platform showcasing digital services with responsive design and interactive user interface.",
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      features: [
+        "Responsive design",
+        "Interactive UI components",
+        "Performance optimized",
+        "Modern design patterns"
+      ],
+      image: "/Images/Digital.png",
+      githubUrl: "https://github.com/Ricky21007",
+      liveUrl: "#"
+    },
+    {
+      title: "Travique Travel Platform",
+      description: "A travel booking platform with destination browsing, booking management, and user reviews.",
+      technologies: ["React", "JavaScript", "CSS3", "API Integration"],
+      features: [
+        "Destination search and filtering",
+        "Booking management system",
+        "User review system",
+        "Payment integration"
+      ],
+      image: "/Images/Travique.png",
+      githubUrl: "https://github.com/Ricky21007",
+      liveUrl: "#"
+    },
+    {
+      title: "Smart Chatbot Interface",
+      description: "An intelligent chatbot interface with natural language processing and contextual responses.",
+      technologies: ["React", "AI/ML APIs", "JavaScript", "CSS"],
+      features: [
+        "Natural language processing",
+        "Contextual responses",
+        "Multi-language support",
+        "Analytics dashboard"
+      ],
+      image: "/Images/Chatbot.PNG",
+      githubUrl: "https://github.com/Ricky21007",
+      liveUrl: "#"
+    },
+    {
+      title: "Student Placement Portal",
+      description: "A comprehensive portal for managing student placements, company partnerships, and application tracking.",
+      technologies: ["React", "Node.js", "Database", "Authentication"],
+      features: [
+        "Student profile management",
+        "Company partnership system",
+        "Application tracking",
+        "Automated matching algorithm"
+      ],
+      image: "/Images/Placement portal.PNG",
+      githubUrl: "https://github.com/Ricky21007",
+      liveUrl: "#"
+    },
+    {
+      title: "Rating & Review System",
+      description: "A flexible rating and review system that can be integrated into various applications.",
+      technologies: ["React", "JavaScript", "API Design", "Database"],
+      features: [
+        "Multi-criteria rating system",
+        "Review moderation",
+        "Analytics and insights",
+        "API for integration"
+      ],
+      image: "/Images/rating.webp",
+      githubUrl: "https://github.com/Ricky21007",
+      liveUrl: "#"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen pt-24 pb-16">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          
+          {/* Page Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Projects</h1>
+            <p className="text-xl text-muted-foreground">Showcase of my development work and technical expertise</p>
+          </div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <div 
+                key={index}
+                className="bg-card rounded-xl border border-border shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105"
+              >
+                {/* Project Image */}
+                <div className="aspect-video bg-muted overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                
+                {/* Project Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-primary mb-3">{project.title}</h3>
+                  <p className="text-foreground/90 text-sm leading-relaxed mb-4">{project.description}</p>
+                  
+                  {/* Technologies */}
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-foreground mb-2">Technologies Used:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span 
+                          key={techIndex}
+                          className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md border border-primary/20"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Key Features */}
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-foreground mb-2">Key Features:</h4>
+                    <ul className="text-xs text-foreground/80 space-y-1">
+                      {project.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start gap-1">
+                          <span className="text-primary mt-1">•</span>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  {/* Action Buttons */}
+                  <div className="flex gap-3">
+                    <a 
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-lg text-center text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                    >
+                      <svg className="w-4 h-4 inline mr-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                      </svg>
+                      Code
+                    </a>
+                    
+                    {project.liveUrl !== "#" && (
+                      <a 
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 px-4 py-2 bg-primary text-primary-foreground rounded-lg text-center text-sm font-medium hover:bg-primary/90 transition-all duration-300"
+                      >
+                        <svg className="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Live Demo
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-16">
+            <div className="bg-card rounded-xl p-8 border border-border shadow-lg">
+              <h2 className="text-2xl font-bold text-primary mb-4">Interested in My Work?</h2>
+              <p className="text-foreground/90 mb-6">
+                I'm always excited to work on new projects and collaborate with fellow developers and businesses.
+              </p>
+              <a 
+                href="/contact"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300"
+              >
+                Get In Touch
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Projects;
