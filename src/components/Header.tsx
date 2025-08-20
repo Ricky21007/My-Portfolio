@@ -15,6 +15,7 @@ const Header = ({ darkMode, toggleDarkMode }: HeaderProps) => {
   };
 
   const navItems = [
+    { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/education", label: "Education" },
     { href: "/projects", label: "Projects" },

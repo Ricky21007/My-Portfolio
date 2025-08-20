@@ -80,7 +80,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-black">Location</h3>
-                    <p className="text-gray-600">Jamaica</p>
+                    <p className="text-gray-600">South Africa</p>
                   </div>
                 </div>
 
