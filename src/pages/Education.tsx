@@ -107,40 +107,6 @@ const Education = () => {
                 </div>
               </div>
             </div>
-
-            {/* Professional Development */}
-            <div className="space-y-8">
-              <h2 className="text-3xl font-bold text-primary mb-8">Continuous Learning</h2>
-              
-              <div className="bg-white rounded-xl p-8 border-2 border-gray-200 shadow-lg">
-                <h3 className="text-xl font-bold text-primary mb-4">Self-Directed Learning & Skills Development</h3>
-                <p className="text-lg leading-relaxed text-gray-800 mb-6">
-                  Beyond formal education, I am committed to continuous learning and staying updated with the latest technologies 
-                  and best practices in software development. I regularly engage with online courses, tutorials, and hands-on 
-                  projects to expand my knowledge and skills.
-                </p>
-                
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {[
-                    "React Development",
-                    "JavaScript/TypeScript", 
-                    "Node.js",
-                    "Database Design",
-                    "API Development",
-                    "Version Control (Git)",
-                    "Problem Solving",
-                    "Project Management"
-                  ].map((skill, index) => (
-                    <div
-                      key={skill}
-                      className="bg-blue-50 border-2 border-primary/20 rounded-lg p-3 text-center text-sm font-medium text-gray-800 hover:bg-blue-100 transition-colors duration-300"
-                    >
-                      {skill}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

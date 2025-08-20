@@ -5,10 +5,10 @@
 /* Import modern fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 
-/* Modern cyberpunk color scheme */
+/* Modern professional color scheme */
 @layer base {
   :root {
-    /* Professional light theme - white background with steel blue accents */
+    /* Professional light theme - white background with darker steel blue accents */
     --background: 0 0% 100%; /* Pure white background */
     --foreground: 0 0% 0%; /* Black text */
 
@@ -18,8 +18,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    --primary: 215 84% 56%; /* Steel blue for headings and important elements */
-    --primary-foreground: 0 0% 100%; /* White text on steel blue */
+    --primary: 215 84% 45%; /* Darker steel blue for headings and important elements */
+    --primary-foreground: 0 0% 100%; /* White text on darker steel blue */
 
     --secondary: 0 0% 96%; /* Very light gray */
     --secondary-foreground: 0 0% 0%;
@@ -27,7 +27,7 @@
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%; /* Medium gray for muted text */
 
-    --accent: 215 84% 56%; /* Steel blue accent */
+    --accent: 215 84% 45%; /* Darker steel blue accent */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
@@ -35,77 +35,78 @@
 
     --border: 0 0% 90%; /* Light gray borders */
     --input: 0 0% 100%; /* White inputs */
-    --ring: 215 84% 56%;
+    --ring: 215 84% 45%;
 
     --radius: 0.5rem;
 
     /* Professional color palette */
-    --steel-blue: 215 84% 56%; /* Primary steel blue */
-    --steel-blue-light: 215 84% 66%; /* Lighter steel blue */
-    --steel-blue-dark: 215 84% 46%; /* Darker steel blue */
+    --steel-blue: 215 84% 45%; /* Primary darker steel blue */
+    --steel-blue-light: 215 84% 55%; /* Lighter steel blue */
+    --steel-blue-dark: 215 84% 35%; /* Even darker steel blue */
     --white: 0 0% 100%; /* Pure white */
     --black: 0 0% 0%; /* Pure black */
     --gray-light: 0 0% 96%; /* Light gray */
     --gray-medium: 0 0% 45%; /* Medium gray */
 
-    /* Gradient colors - steel blue variations */
-    --gradient-start: 215 84% 56%;
-    --gradient-middle: 215 84% 66%;
-    --gradient-end: 215 84% 46%;
+    /* Gradient colors - darker steel blue variations */
+    --gradient-start: 215 84% 45%;
+    --gradient-middle: 215 84% 55%;
+    --gradient-end: 215 84% 35%;
 
-    /* Section specific accents - all steel blue variations */
-    --hero-accent: 215 84% 56%;
-    --education-accent: 215 84% 56%;
-    --project-accent: 215 84% 56%;
-    --contact-accent: 215 84% 56%;
+    /* Section specific accents - all darker steel blue variations */
+    --hero-accent: 215 84% 45%;
+    --education-accent: 215 84% 45%;
+    --project-accent: 215 84% 45%;
+    --contact-accent: 215 84% 45%;
   }
 
-  .light {
-    /* Same as root - always light theme */
-    --background: 0 0% 100%; /* Pure white background */
-    --foreground: 0 0% 0%; /* Black text */
+  .dark {
+    /* Professional dark theme - dark background with darker steel blue accents */
+    --background: 224 71% 4%; /* Deep dark blue-black */
+    --foreground: 213 31% 91%; /* Bright white-blue */
 
-    --card: 0 0% 100%; /* White cards */
-    --card-foreground: 0 0% 0%; /* Black text on cards */
+    --card: 224 71% 6%; /* Slightly lighter dark */
+    --card-foreground: 213 31% 91%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
 
-    --primary: 215 84% 56%; /* Steel blue */
-    --primary-foreground: 0 0% 100%;
+    --primary: 215 84% 55%; /* Slightly lighter steel blue for dark mode */
+    --primary-foreground: 224 71% 4%;
 
-    --secondary: 0 0% 96%; /* Very light gray */
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 217 32% 17%; /* Dark blue-gray */
+    --secondary-foreground: 213 31% 91%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%; /* Medium gray for muted text */
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 215 84% 56%; /* Steel blue accent */
-    --accent-foreground: 0 0% 100%;
+    --accent: 215 84% 55%; /* Slightly lighter steel blue accent for dark mode */
+    --accent-foreground: 224 71% 4%;
 
-    --destructive: 0 85% 55%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%; /* Light gray borders */
-    --input: 0 0% 100%;
-    --ring: 215 84% 56%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 215 84% 55%;
 
-    --steel-blue: 215 84% 56%;
-    --steel-blue-light: 215 84% 66%;
-    --steel-blue-dark: 215 84% 46%;
-    --white: 0 0% 100%;
+    /* Dark theme steel blue variations */
+    --steel-blue: 215 84% 55%;
+    --steel-blue-light: 215 84% 65%;
+    --steel-blue-dark: 215 84% 45%;
+    --white: 0 0% 98%;
     --black: 0 0% 0%;
-    --gray-light: 0 0% 96%;
-    --gray-medium: 0 0% 45%;
+    --gray-light: 215 20% 88%;
+    --gray-medium: 215 15% 55%;
 
-    --gradient-start: 215 84% 56%;
-    --gradient-middle: 215 84% 66%;
-    --gradient-end: 215 84% 46%;
+    --gradient-start: 215 84% 55%;
+    --gradient-middle: 215 84% 65%;
+    --gradient-end: 215 84% 45%;
 
-    --hero-accent: 215 84% 56%;
-    --education-accent: 215 84% 56%;
-    --project-accent: 215 84% 56%;
-    --contact-accent: 215 84% 56%;
+    --hero-accent: 215 84% 55%;
+    --education-accent: 215 84% 55%;
+    --project-accent: 215 84% 55%;
+    --contact-accent: 215 84% 55%;
   }
 }
 
@@ -119,287 +120,48 @@
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     scroll-behavior: smooth;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background-attachment: fixed;
-  }
-
-  /* Animated background pattern */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:
-      radial-gradient(circle at 20% 80%, hsl(var(--neon-cyan) / 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, hsl(var(--neon-purple) / 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, hsl(var(--neon-pink) / 0.05) 0%, transparent 50%);
-    z-index: -1;
-    animation: float 20s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    33% { transform: translateY(-20px) rotate(1deg); }
-    66% { transform: translateY(10px) rotate(-1deg); }
   }
 
   h1, h2, h3 {
     @apply font-bold;
-    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-middle)), hsl(var(--gradient-end)));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 200%;
-    animation: gradient-shift 3s ease infinite;
-  }
-
-  @keyframes gradient-shift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    color: hsl(var(--primary));
   }
 }
 
-/* Modern cyberpunk animations and effects */
+/* Modern professional utilities */
 @layer utilities {
-
-  /* Neon glow effects */
-  .neon-glow {
-    box-shadow:
-      0 0 5px hsl(var(--primary)),
-      0 0 10px hsl(var(--primary)),
-      0 0 15px hsl(var(--primary) / 0.5),
-      0 0 20px hsl(var(--primary) / 0.3);
-  }
-
-  .neon-text {
-    text-shadow:
-      0 0 5px hsl(var(--primary)),
-      0 0 10px hsl(var(--primary)),
-      0 0 15px hsl(var(--primary) / 0.5);
-  }
-
-  /* Modern section frames */
+  /* Professional section frames */
   .section-frame {
     @apply rounded-2xl border transition-all duration-500;
-    background: linear-gradient(135deg,
-      hsl(var(--card) / 0.8),
-      hsl(var(--card) / 0.4)
-    );
-    backdrop-filter: blur(20px);
-    border: 1px solid hsl(var(--primary) / 0.2);
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
     position: relative;
     overflow: hidden;
-  }
-
-  .section-frame::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg,
-      transparent,
-      hsl(var(--primary) / 0.1),
-      transparent
-    );
-    transition: left 0.5s;
   }
 
   .section-frame:hover {
     @apply -translate-y-2 scale-[1.02];
     border-color: hsl(var(--primary) / 0.4);
-    box-shadow:
-      0 20px 40px hsl(var(--primary) / 0.1),
-      0 0 0 1px hsl(var(--primary) / 0.2);
+    box-shadow: 0 20px 40px hsl(var(--primary) / 0.1);
   }
-
-  .section-frame:hover::before {
-    left: 100%;
-  }
-
-  .education-frame {
-    background: linear-gradient(135deg,
-      hsl(var(--education-accent) / 0.1),
-      hsl(var(--card) / 0.8)
-    );
-    border-color: hsl(var(--education-accent) / 0.3);
-  }
-
-  .education-frame:hover {
-    border-color: hsl(var(--education-accent) / 0.6);
-    box-shadow:
-      0 20px 40px hsl(var(--education-accent) / 0.2),
-      0 0 0 1px hsl(var(--education-accent) / 0.3);
-  }
-
-  .projects-frame {
-    @apply rounded-2xl border transition-all duration-500;
-    background: linear-gradient(135deg,
-      hsl(var(--project-accent) / 0.1),
-      hsl(var(--card) / 0.8)
-    );
-    backdrop-filter: blur(20px);
-    border-color: hsl(var(--project-accent) / 0.3);
-  }
-
-  .projects-frame:hover {
-    @apply -translate-y-2 scale-[1.02];
-    border-color: hsl(var(--project-accent) / 0.6);
-    box-shadow:
-      0 20px 40px hsl(var(--project-accent) / 0.2),
-      0 0 0 1px hsl(var(--project-accent) / 0.3);
-  }
-
 
   /* Modern button effects */
   .portfolio-btn {
     @apply font-bold px-6 py-3 rounded-xl transition-all duration-300 relative overflow-hidden;
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--neon-green)));
-    border: 1px solid hsl(var(--primary) / 0.3);
-    box-shadow:
-      0 4px 15px hsl(var(--primary) / 0.2),
-      inset 0 1px 0 hsl(var(--primary) / 0.2);
-    color: white;
-    position: relative;
-  }
-
-  .portfolio-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent
-    );
-    transition: left 0.5s;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border: 1px solid hsl(var(--primary));
+    box-shadow: 0 4px 15px hsl(var(--primary) / 0.2);
   }
 
   .portfolio-btn:hover {
     @apply scale-105;
-    box-shadow:
-      0 8px 25px hsl(var(--primary) / 0.4),
-      0 0 0 1px hsl(var(--primary) / 0.5),
-      inset 0 1px 0 hsl(var(--primary) / 0.3);
+    box-shadow: 0 8px 25px hsl(var(--primary) / 0.4);
     transform: translateY(-2px) scale(1.05);
-  }
-
-  .portfolio-btn:hover::before {
-    left: 100%;
   }
 
   .portfolio-btn:active {
     transform: translateY(0) scale(1.02);
-  }
-
-  /* Section visibility animation */
-  .section-animate {
-    @apply opacity-0 translate-y-8 transition-all duration-700;
-  }
-
-  .section-animate.visible {
-    @apply opacity-100 translate-y-0;
-  }
-
-  /* Project thumbnail hover effect */
-  .project-thumbnail {
-    @apply transition-transform duration-300;
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
-  }
-
-  .project-thumbnail:hover {
-    @apply scale-105;
-  }
-
-  @keyframes fadeIn {
-    to { opacity: 1; }
-  }
-
-  /* Modern hero text effects */
-  .hero-text-shadow {
-    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-middle)), hsl(var(--gradient-end)));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 200%;
-    animation: gradient-flow 4s ease infinite;
-    text-shadow: none;
-  }
-
-  @keyframes gradient-flow {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-
-  /* Light mode hero text */
-  .light .hero-text-shadow {
-    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-middle)), hsl(var(--gradient-end)));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  /* Certificate hover effect */
-  .certificate-hover {
-    @apply transition-transform duration-300;
-  }
-
-  .certificate-hover:hover {
-    @apply scale-105;
-  }
-
-  /* Form input styles */
-  .portfolio-input {
-    @apply w-full p-2.5 border border-primary rounded bg-card text-foreground;
-  }
-
-  .portfolio-input::placeholder {
-    color: hsl(var(--primary));
-  }
-
-  /* Submit button loading animation */
-  .submit-loading::after {
-    content: '';
-    @apply inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full ml-2;
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-
-  /* Mobile menu animations */
-  .mobile-menu-line {
-    @apply block w-6 h-0.5 bg-foreground transition-transform duration-300;
-  }
-
-  .mobile-menu-open .mobile-menu-line:nth-child(1) {
-    @apply rotate-45 translate-y-1.5;
-  }
-
-  .mobile-menu-open .mobile-menu-line:nth-child(2) {
-    @apply opacity-0;
-  }
-
-  .mobile-menu-open .mobile-menu-line:nth-child(3) {
-    @apply -rotate-45 -translate-y-1.5;
-  }
-}
-
-/* Modern font utilities */
-@layer base {
-  .font-inter {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  }
-
-  .font-mono {
-    font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
   }
 
   /* Glass morphism effect */
@@ -435,5 +197,10 @@
       box-shadow: 0 0 20px hsl(var(--primary) / 0.8),
                   0 0 30px hsl(var(--primary) / 0.4);
     }
+  }
+
+  /* Theme transition */
+  .theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
 }
