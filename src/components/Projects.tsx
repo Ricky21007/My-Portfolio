@@ -30,7 +30,7 @@ const Projects = () => {
         "User review system",
         "Payment integration"
       ],
-      image: "/Images/Travique.png",
+      image: "/Images/Travique.1.PNG",
       githubUrl: "https://github.com/Ricky21007",
       liveUrl: "https://aidan2125.github.io/Backend-testing/",
       isVideo: false,
