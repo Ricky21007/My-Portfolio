@@ -9,12 +9,19 @@ const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false); // Close mobile menu after clicking
+  };
+
   const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/education", label: "Education" },
-    { href: "/projects", label: "Projects" },
-    { href: "/contact", label: "Contact" }
+    { id: "about", label: "About" },
+    { id: "education", label: "Education" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" }
   ];
 
   return (
@@ -26,29 +33,32 @@ const Header = () => {
             
             {/* Logo with professional styling */}
             <div className="relative group">
-              <a href="/" className="block">
+              <button 
+                onClick={() => scrollToSection('home')}
+                className="block"
+              >
                 <h1 className="font-bold text-xl md:text-2xl font-mono cursor-pointer transition-all duration-300 group-hover:scale-105">
                   <span className="text-primary">
                     &lt;Tyric/&gt;
                   </span>
                 </h1>
-              </a>
+              </button>
             </div>
             
             {/* Desktop Navigation */}
             <nav className="hidden md:block">
               <ul className="flex items-center space-x-8">
                 {navItems.map((item, index) => (
-                  <li key={item.href}>
-                    <a 
-                      href={item.href} 
+                  <li key={item.id}>
+                    <button 
+                      onClick={() => scrollToSection(item.id)}
                       className="relative px-4 py-2 font-medium transition-all duration-300 hover:text-primary group"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       <span className="relative z-10">{item.label}</span>
                       <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></div>
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -94,22 +104,21 @@ const Header = () => {
             <nav className="text-center space-y-8">
               {navItems.map((item, index) => (
                 <div
-                  key={item.href}
+                  key={item.id}
                   className="opacity-0 animate-fade-in"
                   style={{ 
                     animationDelay: `${index * 0.1}s`,
                     animationFillMode: 'forwards'
                   }}
                 >
-                  <a 
-                    href={item.href} 
-                    onClick={toggleMobileMenu}
+                  <button 
+                    onClick={() => scrollToSection(item.id)}
                     className="relative group block text-2xl font-bold transition-all duration-300 hover:text-primary px-8 py-4"
                   >
                     <span className="relative z-10">{item.label}</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan via-neon-purple to-neon-pink rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                  </a>
+                  </button>
                 </div>
               ))}
             </nav>
